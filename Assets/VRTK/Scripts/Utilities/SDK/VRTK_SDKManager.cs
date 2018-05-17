@@ -348,13 +348,13 @@ namespace VRTK
 #endif
 
 #if UNITY_5_5_OR_NEWER
-                VREditor.SetVREnabledDevicesOnTargetGroup(
+                //VREditor.SetVREnabledDevicesOnTargetGroup(
 #else
-                VREditor.SetVREnabledDevices(
+                //VREditor.SetVREnabledDevices(
 #endif
-                    targetGroup,
-                    vrEnabled ? new[] { "None" }.Concat(deviceNames).ToArray() : new string[0]
-                );
+                 //   targetGroup,
+                //    vrEnabled ? new[] { "None" }.Concat(deviceNames).ToArray() : new string[0]
+               // );
             }
         }
 #endif

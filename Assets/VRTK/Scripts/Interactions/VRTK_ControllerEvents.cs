@@ -125,7 +125,7 @@ namespace VRTK
         /// <summary>
         /// This will be true if the trigger is squeezed about half way in.
         /// </summary>
-        [HideInInspector]
+        //[HideInInspector]
         public bool triggerPressed = false;
         /// <summary>
         /// This will be true if the trigger is squeezed a small amount.
@@ -1294,7 +1294,7 @@ namespace VRTK
             }
             else
             {
-                OnTouchpadAxisChanged(SetControllerEvent(ref touchpadAxisChanged, true, 1f));
+                OnTouchpadAxisChanged(SetControllerEvent(ref touchpadAxisChanged, true, 1f));                
             }
 
             //ButtonOne Touched
