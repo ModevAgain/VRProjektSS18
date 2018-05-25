@@ -11,6 +11,7 @@ TagManager:
   - Fader
   - dontmove
   - listlast
+  - ExcludeTeleport
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - TeleportPoints
   - DemoUI
   - Toys
-  - 
+  - TriggersForPlayer
   - 
   - 
   - 
