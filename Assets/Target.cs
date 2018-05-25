@@ -30,7 +30,7 @@ public class Target : MonoBehaviour {
         if (targetCon.MoveY)
             transform.DOMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
         else if (targetCon.MoveX)
-            transform.DOMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            transform.DOMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
         else if (targetCon.MoveZ)
             transform.DOMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
     }
