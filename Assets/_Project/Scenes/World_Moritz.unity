@@ -6056,20 +6056,59 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4709256616855388, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 13.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4709256616855388, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -9.78
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114090736057676116, guid: 5e7c586ee4a05504283fbbc517c092de,
         type: 2}
       propertyPath: ignoreTriggerColliders
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114381220007274920, guid: 5e7c586ee4a05504283fbbc517c092de,
+        type: 2}
+      propertyPath: headsetFade
+      value: 
+      objectReference: {fileID: 1072219666}
+    - target: {fileID: 114381220007274920, guid: 5e7c586ee4a05504283fbbc517c092de,
+        type: 2}
+      propertyPath: headsetCollision
+      value: 
+      objectReference: {fileID: 1072219667}
+    - target: {fileID: 114090736057676116, guid: 5e7c586ee4a05504283fbbc517c092de,
+        type: 2}
+      propertyPath: colliderRadius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4709256616855388, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479262805817738, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 16.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479262805817738, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -9.78
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1072219666 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114289339855325840, guid: 5e7c586ee4a05504283fbbc517c092de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072219665}
+  m_Script: {fileID: 11500000, guid: 44596d094d0946345a7fc6688ba9c06c, type: 3}
+--- !u!114 &1072219667 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114090736057676116, guid: 5e7c586ee4a05504283fbbc517c092de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072219665}
+  m_Script: {fileID: 11500000, guid: 057015237f68bd74d9c6c6c28ea347e9, type: 3}
 --- !u!1 &1168849879
 GameObject:
   m_ObjectHideFlags: 0
