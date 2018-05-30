@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class RoomSpawn : MonoBehaviour {
 
-    public GameObject EmptyRoom;
-    public GameObject StartRoom;
+    public LevelData LevelData;
 
     private DoorScript _currentDoor;
 
     private bool _firstStart = true;
+
+    private int _roomCounter = 0;
+    private float _currentYPos = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,35 +20,20 @@ public class RoomSpawn : MonoBehaviour {
 
     void spawnRoom()
     {
-        if (_firstStart)
-        {
-            StartRoom.transform.position = new Vector3(0, 0, 0);
-            GameObject tempRoom = Instantiate<GameObject>(StartRoom);
 
-            _currentDoor = tempRoom.GetComponentInChildren<DoorScript>();
+        GameObject tempRoom = LevelData.Rooms[_roomCounter].RoomObj;
 
-            if (_currentDoor != null)
-                _currentDoor.doorOpening += spawnRoom;
+        _currentYPos += LevelData.Rooms[_roomCounter].Width;
 
-            _firstStart = false;
-        }
-        else
-        {
-            GameObject tempRoom = Instantiate<GameObject>(EmptyRoom);
-            tempRoom.transform.position = new Vector3(20, 0, 0);
+        tempRoom.transform.position = new Vector3(0, 0, _currentYPos);
+        GameObject instRoom = Instantiate<GameObject>(tempRoom);
 
-            
-            _currentDoor = tempRoom.GetComponentInChildren<DoorScript>();
+        _currentDoor = instRoom.GetComponentInChildren<DoorScript>();
 
-            if (_currentDoor != null)            
-                _currentDoor.doorOpening += spawnRoom;
+        if (_currentDoor != null)
+            _currentDoor.doorOpening += spawnRoom;
 
-            
-
-
-        }
-
-
-
+        _roomCounter++;
+        
     }
 }
