@@ -9,6 +9,9 @@ public class DoorScript : MonoBehaviour {
     public float Y_Offset;
 
     private bool _isOpen;
+    
+    public delegate void DoorOpen();
+    public DoorOpen doorOpening;
 
 	// Use this for initialization
 	void Start () {
@@ -26,10 +29,14 @@ public class DoorScript : MonoBehaviour {
         if (_isOpen)
             return;
 
-        Debug.Log("gunzt");
+        if (doorOpening != null)
+        {
+            doorOpening();
+        }
+
         _isOpen = true;
 
-        transform.DOLocalMoveY(transform.localPosition.y - Y_Offset, 0.5f).OnComplete(() => Debug.Log("finished"));
+        transform.DOLocalMoveY(transform.localPosition.y - Y_Offset, 0.5f);
     }
 
 }
