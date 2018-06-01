@@ -15,6 +15,9 @@ public class DoorActivation : MonoBehaviour {
     public delegate void DoorOpen();
     public DoorOpen doorOpening;
 
+    public delegate void RoomFinished();
+    public RoomFinished RoomHasFinished;
+
     private bool _isOpen = false;
 
 	// Use this for initialization
@@ -45,6 +48,15 @@ public class DoorActivation : MonoBehaviour {
 
 	}
 
+    public void OpenDoorFromButton()
+    {
+        if (Ready)
+            return;
+        Ready = true;
+        _canAnimate = true;
+        Open();
+    }
+
 	public void Close()
 	{
         if (!Ready)
@@ -64,12 +76,14 @@ public class DoorActivation : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-            Open();
+        if(RoomHasFinished != null)
+            RoomHasFinished();
     }
 
     private void OnTriggerExit(Collider other)
     {
 
 			Close ();
+
     }
 }

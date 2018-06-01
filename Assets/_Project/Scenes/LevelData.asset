@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   Rooms:
-  - RoomObj: {fileID: 1650144995986562, guid: 2b01b392e1dfb454d825e5f8de328698, type: 2}
+  - RoomObj: {fileID: 1141473787608152, guid: 1ae34b748b94e534aacf7321f18734b6, type: 2}
     Width: 0
-  - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
+  - RoomObj: {fileID: 1156255389317566, guid: bf776ea557a76744f9af4de1321b2b17, type: 2}
     Width: 6
   - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
     Width: 6

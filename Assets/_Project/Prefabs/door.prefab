@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4199413082357518}
   - component: {fileID: 95002424238910214}
   m_Layer: 0
-  m_Name: Door
+  m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,3 +658,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationName: DoorAnim
+  Ready: 0

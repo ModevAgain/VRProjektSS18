@@ -6,6 +6,8 @@ public class RoomSpawn : MonoBehaviour {
 
     public LevelData LevelData;
 
+
+
     private DoorActivation _currentDoor;
 
     private bool _firstStart = true;
@@ -18,6 +20,8 @@ public class RoomSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         spawnRoom();
+
+        
 	}
 
     private void Update()
@@ -29,8 +33,8 @@ public class RoomSpawn : MonoBehaviour {
     void spawnRoom()
     {
         //remove delegate from old door
-        if (_currentDoor != null)
-            _currentRoom.Door.doorOpening -= spawnRoom;
+        //if (_currentDoor != null)
+        //    _currentRoom.Door.doorOpening -= spawnRoom;
 
         //_currentRoom -> _oldRoom
         if (_currentRoom != null)
@@ -45,6 +49,8 @@ public class RoomSpawn : MonoBehaviour {
         GameObject instRoom = Instantiate<GameObject>(tempRoom);
 
         _currentRoom = instRoom.GetComponent<ContentScript>();
+        _currentDoor = _currentRoom.Door;
+        _currentDoor.RoomHasFinished += () => StartCoroutine(DeleteRoom());
         
         if (_currentDoor != null)
             _currentRoom.Door.doorOpening += spawnRoom;

@@ -13,8 +13,16 @@ public class ContentScript : MonoBehaviour {
 
     public virtual void Awake()
     {
-        _connectionBlockMat = ConnectionBlock.GetComponent<MeshRenderer>().material;
-        _connectionBlockCol = ConnectionBlock.GetComponent<Collider>();
+        if(ConnectionBlock != null)
+        {
+            _connectionBlockMat = ConnectionBlock.GetComponent<MeshRenderer>().material;
+            _connectionBlockCol = ConnectionBlock.GetComponent<Collider>();
+        }
+
+        //foreach (var item in GetComponentsInChildren<VRTK.VRTK_Control>())
+        //{
+        //    item.DetectSetup();
+        //}
     }
 
     public IEnumerator CloseConnectionToOldRoom()
@@ -32,4 +40,5 @@ public class ContentScript : MonoBehaviour {
 
         yield return null;
     }
+
 }
