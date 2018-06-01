@@ -16,3 +16,9 @@ MonoBehaviour:
     Width: 0
   - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
     Width: 6
+  - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1546228938830366, guid: 798132b1785b4c947aa47eb76fa7f2ba, type: 2}
+    Width: 6

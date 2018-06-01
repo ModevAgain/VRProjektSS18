@@ -13,15 +13,6 @@ public class DoorScript : MonoBehaviour {
     public delegate void DoorOpen();
     public DoorOpen doorOpening;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void OpenDoor()
     {
