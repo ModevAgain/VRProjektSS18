@@ -19,6 +19,7 @@ public class DoorActivation : MonoBehaviour {
     public RoomFinished RoomHasFinished;
 
     private bool _isOpen = false;
+    private bool _hasFinished;
 
 	// Use this for initialization
 	void Start () {
@@ -76,8 +77,16 @@ public class DoorActivation : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_hasFinished)
+            return;
+
+        if (other.tag != "Player")
+            return;
+
         if(RoomHasFinished != null)
             RoomHasFinished();
+
+        _hasFinished = true;
     }
 
     private void OnTriggerExit(Collider other)

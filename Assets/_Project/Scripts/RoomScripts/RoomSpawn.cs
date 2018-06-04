@@ -32,9 +32,6 @@ public class RoomSpawn : MonoBehaviour {
 
     void spawnRoom()
     {
-        //remove delegate from old door
-        //if (_currentDoor != null)
-        //    _currentRoom.Door.doorOpening -= spawnRoom;
 
         //_currentRoom -> _oldRoom
         if (_currentRoom != null)
@@ -49,6 +46,7 @@ public class RoomSpawn : MonoBehaviour {
         GameObject instRoom = Instantiate<GameObject>(tempRoom);
 
         _currentRoom = instRoom.GetComponent<ContentScript>();
+        StartCoroutine(_currentRoom.Setup());
         _currentDoor = _currentRoom.Door;
         _currentDoor.RoomHasFinished += () => StartCoroutine(DeleteRoom());
         
@@ -61,6 +59,7 @@ public class RoomSpawn : MonoBehaviour {
 
 	public IEnumerator DeleteRoom()
 	{
+        _currentDoor.RoomHasFinished -= () => StartCoroutine(DeleteRoom());
         yield return _currentRoom.CloseConnectionToOldRoom();
 		Destroy (_oldRoom.gameObject);
 

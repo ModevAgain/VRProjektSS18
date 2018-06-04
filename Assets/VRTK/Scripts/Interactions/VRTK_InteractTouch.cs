@@ -507,6 +507,7 @@ namespace VRTK
                 controllerCollisionDetector.transform.SetParent(transform);
                 controllerCollisionDetector.transform.localScale = transform.localScale;
                 controllerCollisionDetector.name = VRTK_SharedMethods.GenerateVRTKObjectName(true, "Controller", "CollidersContainer");
+                controllerCollisionDetector.transform.GetChild(0).tag = "Hands";
                 destroyColliderOnDisable = true;
             }
             else
