@@ -21,12 +21,23 @@ public class DoorActivation : MonoBehaviour {
     private bool _isOpen = false;
     private bool _hasFinished;
 
+    public bool OpenDoor = false;
+
 	// Use this for initialization
 	void Start () {
 
         _animator = GetComponentInParent<Animator>();
 
 	}
+
+    void Update()
+    {
+        if (OpenDoor)
+        {
+            OpenDoor = false;
+            OpenDoorFromButton();
+        }
+    }
 
 	public void Open()
 	{

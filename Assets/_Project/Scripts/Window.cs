@@ -22,20 +22,6 @@ public class Window : MonoBehaviour {
         _windowMat.DOFloat(0, "_Level", 0);
 	}
 	
-    void Update()
-    {
-        //if (_windowOpended)
-        //{
-        //    _counter += Time.deltaTime;
-        //    if (_counter >= WindowCounter)
-        //    {
-        //        _windowOpended = false;
-        //        _counter = 0;
-        //        StartCoroutine(CloseWindow());
-        //    }
-        //}
-    }
-    
     public void OnButtonPush()
     {
         if (!_windowOpended)
@@ -48,20 +34,21 @@ public class Window : MonoBehaviour {
     private IEnumerator OpenWindow()
     {
         Debug.Log("Open Window");
-        Tween _openWindow = _windowMat.DOFloat(1, "_Level", 1);
+        Tween _openWindow= _windowMat.DOFloat(1, "_DissolveIntensity", 2);
+
+        yield return _openWindow.WaitForCompletion();
+
         if (WindowIsOpen != null)
         {
             WindowIsOpen();
         }
-        yield return _openWindow.WaitForCompletion();
-        
     }
 
     public IEnumerator CloseWindow()
     {
         Debug.Log("Close Window");
 
-        Tween _closeWindow = _windowMat.DOFloat(0, "_Level", 1);
+        Tween _closeWindow = _windowMat.DOFloat(0, "_DissolveIntensity", 2);
 
         yield return _closeWindow.WaitForCompletion();
         _windowOpended = false;

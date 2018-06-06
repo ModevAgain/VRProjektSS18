@@ -15,9 +15,7 @@ public class TargetController : MonoBehaviour {
 
     public delegate void HitAllTargets();
     public HitAllTargets AllTargetsDestroyed;
-
-    private bool _firstStart = true;
-
+    
     private List<GameObject> _targets = new List<GameObject>();
 
     private WaitForSeconds _targetRespawnTime;

@@ -31,11 +31,11 @@ public class Target : MonoBehaviour {
     private void MoveTarget()
     {
         if (_targetCon.MoveY)
-            transform.DOMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            transform.DOLocalMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
         else if (_targetCon.MoveX)
-            transform.DOMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            transform.DOLocalMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
         else if (_targetCon.MoveZ)
-            transform.DOMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            transform.DOLocalMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
     }
 
     void OnCollisionEnter(Collision col)

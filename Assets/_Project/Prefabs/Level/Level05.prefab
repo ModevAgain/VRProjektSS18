@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 4978543773001684}
   - component: {fileID: 114603504313988222}
   m_Layer: 0
-  m_Name: Level02
+  m_Name: Level05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,8 +647,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1393455248318410}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 2.4, z: -0.5}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 10, y: 2.25, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4978543773001684}
@@ -1117,7 +1117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156255389317566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalPosition: {x: -1.5952568, y: 8.618504e-18, z: -3.5804424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4881996706320164}
@@ -1212,7 +1212,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+  - {fileID: 2100000, guid: c8565821defb82c4b9b1843714e7e38e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1484,7 +1484,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
+  - {fileID: 2100000, guid: c8565821defb82c4b9b1843714e7e38e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1586,7 +1586,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6b6ec1662c137a74790ccbb1eb7541ec, type: 2}
+  - {fileID: 2100000, guid: 559f4d76dc70d644185a0c629f3b0b2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3060,9 +3060,17 @@ MonoBehaviour:
     areaError: 15
   asset_guid: 
   dontDestroyMeshOnDelete: 0
-  m_selectedFaces: 
-  m_SelectedEdges: []
-  m_selectedTriangles: 
+  m_selectedFaces: 00000000
+  m_SelectedEdges:
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  - x: 0
+    y: 0
+  m_selectedTriangles: 000000000000000000000000000000000000000000000000
 --- !u!114 &114301232677238968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4630,7 +4638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 114887325348678164}
   ConnectionBlock: {fileID: 1890271778373878}
-  WindowTimer: 5
+  WindowTimer: 20
 --- !u!114 &114604053604796332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5924,7 +5932,7 @@ MonoBehaviour:
   interactWithoutGrab: 1
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.015557812
+  activationDistance: 0.015557784
   buttonStrength: 5
   events:
     OnPush:
@@ -5975,6 +5983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimationName: DoorAnim
   Ready: 0
+  OpenDoor: 0
 --- !u!114 &114956367783092656
 MonoBehaviour:
   m_ObjectHideFlags: 1
