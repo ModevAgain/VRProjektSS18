@@ -6,9 +6,15 @@ public class TargetController : MonoBehaviour {
 
 
     public GameObject Target;
+    public int TargetAmount;
     public bool MoveY;
     public bool MoveX;
     public bool MoveZ;
+    public int hitCounter;
+    public float TargetRespawn;
+
+    public delegate void HitAllTargets();
+    public HitAllTargets AllTargetsDestroyed;
 
     private bool _firstStart = true;
 
@@ -19,18 +25,18 @@ public class TargetController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        _targetRespawnTime = new WaitForSeconds(5);
+        _targetRespawnTime = new WaitForSeconds(TargetRespawn);
         
-        spawnTargets();
+        //spawnTargets();
 	}
 	
-    void spawnTargets()
+    public void spawnTargets()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < TargetAmount; i++)
         {
             GameObject tempTarget = Instantiate(Target);
             tempTarget.transform.SetParent(transform);
-            tempTarget.transform.position = new Vector3(transform.position.x, transform.position.y + (1 * i), transform.position.z);
+            tempTarget.transform.position = new Vector3(tempTarget.transform.position.x, tempTarget.transform.position.y + (1 * i), tempTarget.transform.position.z);
 
             _targets.Add(tempTarget);
         }
@@ -40,6 +46,7 @@ public class TargetController : MonoBehaviour {
     {        
         GameObject tempTarget = Instantiate(Target);
         tempTarget.transform.SetParent(transform);
+
         tempTarget.transform.position = objPos;
             
         _targets.Add(tempTarget);        
@@ -49,14 +56,32 @@ public class TargetController : MonoBehaviour {
     private IEnumerator RespawnTarget(Vector3 objPos)
     {
         yield return _targetRespawnTime;
+        hitCounter--;
 
         spawnTargets(objPos);        
     }
 
     public void DestroyTarget(GameObject target)
     {
+        hitCounter++;
         _targets.Remove(target);
         Destroy(target);
         StartCoroutine(RespawnTarget(target.transform.position));
+
+        if (hitCounter >= TargetAmount)
+        {
+            if (AllTargetsDestroyed != null)
+            {
+                AllTargetsDestroyed();
+            }
+        }
+    }
+
+    public void DestroyAllTargets()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
     }
 }

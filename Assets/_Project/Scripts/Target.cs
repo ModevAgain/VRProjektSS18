@@ -5,16 +5,19 @@ using DG.Tweening;
 
 public class Target : MonoBehaviour {
     
-    TargetController targetCon;
+    private TargetController _targetCon;
 
     private float _startPos;
     private float _maxMoveRange;
     
 	// Use this for initialization
 	void Start () {
-        targetCon = GetComponentInParent<TargetController>();
+        _targetCon = GetComponentInParent<TargetController>();
 
-        _startPos = transform.parent.position.x;
+        //_startPos = transform.parent.position.x;
+        _startPos = transform.position.x;
+
+
         _maxMoveRange = _startPos + 8;
 
         MoveTarget();
@@ -27,11 +30,11 @@ public class Target : MonoBehaviour {
 
     private void MoveTarget()
     {
-        if (targetCon.MoveY)
+        if (_targetCon.MoveY)
             transform.DOMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
-        else if (targetCon.MoveX)
+        else if (_targetCon.MoveX)
             transform.DOMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
-        else if (targetCon.MoveZ)
+        else if (_targetCon.MoveZ)
             transform.DOMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
     }
 
@@ -39,7 +42,7 @@ public class Target : MonoBehaviour {
     {
         if (col.gameObject.name == "Bullet(Clone)")
         {
-            targetCon.DestroyTarget(gameObject);
+            _targetCon.DestroyTarget(gameObject);
         }     
     }
 
