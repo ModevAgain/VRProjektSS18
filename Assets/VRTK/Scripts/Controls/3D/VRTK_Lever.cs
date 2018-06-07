@@ -37,6 +37,7 @@ namespace VRTK
         [Tooltip("The amount of friction the lever will have whilst swinging when it is grabbed.")]
         public float grabbedFriction = 60f;
 
+
         protected HingeJoint leverHingeJoint;
         protected bool leverHingeJointCreated = false;
         protected Rigidbody leverRigidbody;
@@ -100,6 +101,7 @@ namespace VRTK
                 controlMax = maxAngle
             };
         }
+       
 
         protected override void HandleUpdate()
         {

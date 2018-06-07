@@ -7,7 +7,11 @@ using DG.Tweening;
 public class DoorActivation : MonoBehaviour {
 
     public string AnimationName;
+
+    public Collider BlockingCollider;
+
     public bool Ready = false;
+
 
     private bool _canAnimate = false;
     private Animator _animator;
@@ -57,6 +61,7 @@ public class DoorActivation : MonoBehaviour {
 		_isOpen = true;
 
 		_animator.SetTrigger("Open");
+        DisableBlockingCollider();
 
 	}
 
@@ -105,5 +110,10 @@ public class DoorActivation : MonoBehaviour {
 
 			Close ();
 
+    }
+
+    public void DisableBlockingCollider()
+    {
+        BlockingCollider.enabled = false;
     }
 }
