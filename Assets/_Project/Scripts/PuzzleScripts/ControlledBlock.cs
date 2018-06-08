@@ -19,8 +19,14 @@ public class ControlledBlock : ControlledObject
     [SerializeField]
     private float _calculatedPos;
 
-
+    [SerializeField]
     private bool _isInPlace;
+
+    private void Awake()
+    {
+        Selector = GetComponentInChildren<ParticleSystem>();
+        
+    }
 
     public void Start()
     {
@@ -70,6 +76,8 @@ public class ControlledBlock : ControlledObject
 
 public abstract class ControlledObject : MonoBehaviour
 {
+    public ParticleSystem Selector;
+
     public abstract void MoveToNormedPos(float pos);
 
     public abstract bool IsControlledObjectOnTarget();

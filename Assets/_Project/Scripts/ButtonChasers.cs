@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using VRTK;
 
 public class ButtonChasers : MonoBehaviour {
 
     private Collider _col;
+
+    private VRTK_Button _btn;
 
 
 	// Use this for initialization
 	void Start () {
 
         _col = GetComponent<Collider>();
+        _btn = GetComponentInChildren<VRTK_Button>();
 
 	}
 	
@@ -23,12 +27,22 @@ public class ButtonChasers : MonoBehaviour {
     public void Move()
     {
         _col.enabled = false;
+        _btn.enabled = false;
+
+        Tween t = null;
+
 
         if (transform.localPosition.x == 0)
-        {            
-            transform.DOLocalMoveX(-2, 0.2f).OnComplete(() => _col.enabled = true);
+        {
+            t = transform.DOLocalMoveX(-2, 0.2f);
         }
-        else transform.DOLocalMoveX(0, 0.2f).OnComplete(() => _col.enabled = true);
+        else t = transform.DOLocalMoveX(0, 0.2f);
+
+        t.OnComplete(() =>
+        {
+            _col.enabled = true;
+            _btn.enabled = true;
+        });
     }
 
     private void OnTriggerEnter(Collider other)
