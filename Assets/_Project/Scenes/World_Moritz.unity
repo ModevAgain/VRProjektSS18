@@ -409,6 +409,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &301411072 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1541801863221096, guid: 5e7c586ee4a05504283fbbc517c092de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072219665}
+--- !u!114 &301411074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301411072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642ef4836907a924e9c634d962724e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: {fileID: 865573969}
+  Holder: {fileID: 823195738}
 --- !u!1 &385970716
 GameObject:
   m_ObjectHideFlags: 0
@@ -4578,6 +4596,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 809467203}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &823195738 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1489185279507044, guid: 5e7c586ee4a05504283fbbc517c092de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072219665}
 --- !u!1 &835355888
 GameObject:
   m_ObjectHideFlags: 0
@@ -4663,6 +4686,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 835355888}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &865573969 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1306908869043192, guid: 5e7c586ee4a05504283fbbc517c092de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1072219665}
 --- !u!1 &901122389
 GameObject:
   m_ObjectHideFlags: 0
@@ -5523,6 +5551,16 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114888949068497370, guid: 5e7c586ee4a05504283fbbc517c092de,
+        type: 2}
+      propertyPath: CustomRotator
+      value: 
+      objectReference: {fileID: 301411074}
+    - target: {fileID: 114540773648703684, guid: 5e7c586ee4a05504283fbbc517c092de,
+        type: 2}
+      propertyPath: CustomRotator
+      value: 
+      objectReference: {fileID: 301411074}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
   m_IsPrefabParent: 0

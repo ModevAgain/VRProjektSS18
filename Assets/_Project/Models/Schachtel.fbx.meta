@@ -1,58 +1,19 @@
 fileFormatVersion: 2
-guid: f9beb202c4ae62248b70b2a98456476e
-timeCreated: 1527250434
+guid: 54a94cb82f09baa44862c273baa7ea6a
+timeCreated: 1528813884
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: door, downrigh
-    100004: door, left
-    100006: door, upright
-    100008: Door001
-    100010: Door002
-    100012: DoorFrame
-    100014: roundThing
     400000: //RootNode
-    400002: door, downrigh
-    400004: door, left
-    400006: door, upright
-    400008: Door001
-    400010: Door002
-    400012: DoorFrame
-    400014: roundThing
     2100000: No Name
-    2300000: door, downrigh
-    2300002: door, left
-    2300004: door, upright
-    2300006: Door001
-    2300008: Door002
-    2300010: DoorFrame
-    2300012: roundThing
-    3300000: door, downrigh
-    3300002: door, left
-    3300004: door, upright
-    3300006: Door001
-    3300008: Door002
-    3300010: DoorFrame
-    3300012: roundThing
-    4300000: door, left
-    4300002: door, downrigh
-    4300004: door, upright
-    4300006: DoorFrame
-    4300008: Door002
-    4300010: Door001
-    4300012: roundThing
-    6400000: door, downrigh
-    6400002: door, left
-    6400004: door, upright
-    6400006: Door001
-    6400008: Door002
-    6400010: DoorFrame
-    6400012: roundThing
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects: {}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -77,16 +38,16 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.4
+    globalScale: 1
     meshCompression: 0
-    addColliders: 1
-    importVisibility: 0
+    addColliders: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -99,13 +60,13 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
