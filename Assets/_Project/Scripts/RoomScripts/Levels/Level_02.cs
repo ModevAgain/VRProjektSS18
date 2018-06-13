@@ -8,7 +8,7 @@ public class Level_02 : ContentScript {
 
     private List<Target> _targets = new List<Target>();
 
-    private DoorScript _door;
+    private DoorActivation _door;
     private Window _window;
     
     public float WindowTimer;
@@ -21,7 +21,7 @@ public class Level_02 : ContentScript {
     {
         _targetCon = GetComponentInChildren<TargetController>();
         _targetCon.AllTargetsDestroyed += LevelEnd;
-        _door = Door.GetComponent<DoorScript>();
+        _door = GetComponentInChildren<DoorActivation>();
         _window = GetComponentInChildren<Window>();
         Debug.Log(_window);
         _window.WindowIsOpen += StartTargets;         
@@ -34,8 +34,9 @@ public class Level_02 : ContentScript {
             _windowTime += Time.deltaTime;
             if (_windowTime >= WindowTimer)
             {
-                _window.CloseWindow();
-                StopTargets();
+                _windowIsOpen = false;
+                StartCoroutine(_window.CloseWindow());
+                StartCoroutine(StopTargets());
             }
         }
 
@@ -46,12 +47,6 @@ public class Level_02 : ContentScript {
         _windowIsOpen = true;
         _targetCon.spawnTargets();
 
-        //foreach (GameObject target in _targetCon.transform)
-        //{
-        //    _targets.Add(target.transform.GetComponent<Target>());
-        //    Debug.Log(target.transform.name);
-        //}
-
         for (int i = 0; i < _targetCon.transform.childCount; i++)
         {
             if (_targetCon.transform.GetChild(i).transform.GetComponent<Target>() != null)
@@ -61,18 +56,17 @@ public class Level_02 : ContentScript {
         }
     }
     
-    private void StopTargets()
+    private IEnumerator StopTargets()
     {
-        _windowIsOpen = false;
+        yield return new WaitForSeconds(2);
         _windowTime = 0;
-        StartCoroutine(_window.CloseWindow());
         _targetCon.DestroyAllTargets();
         _targets.Clear();
     }
 
     private void LevelEnd()
     {
-        _door.OpenDoor();
+        _door.OpenDoorFromButton();
     }
 
     public override IEnumerator Setup()
