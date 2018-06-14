@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4242071204125384}
   - component: {fileID: 198639762289656578}
   - component: {fileID: 199276991754421876}
-  - component: {fileID: 114227316925790782}
+  - component: {fileID: 114505264938052582}
   m_Layer: 19
   m_Name: MainParticleLeft (1)
   m_TagString: Untagged
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 4010092528892020}
   - component: {fileID: 65683118987616756}
   m_Layer: 20
-  m_Name: ParticleTrigger
+  m_Name: ParticleReceiver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1176,7 +1176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1602374333291302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.611165, y: 2.8829807e-18, z: -1.1976957}
+  m_LocalPosition: {x: -1.3877382, y: 4.1329275e-17, z: -17.169695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4193292601581124}
@@ -3946,17 +3946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
---- !u!114 &114227316925790782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285258866965116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c402c96fad70fa546a44a755de63504c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114271206097512724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4314,6 +4303,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityType: 0
+--- !u!114 &114505264938052582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1285258866965116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2953dada39e5e85498305749525fb5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114599744135967382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6732,7 +6732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door: {fileID: 114969448608082452}
   ConnectionBlock: {fileID: 1004699082916670}
-  PTrigger: {fileID: 114227316925790782}
+  PCollision: {fileID: 114505264938052582}
 --- !u!198 &198639762289656578
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -6793,7 +6793,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1677671913
+  randomSeed: 1042542492
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -23,7 +23,7 @@ public class ParticleCollision : MonoBehaviour
 
         if (numEnter > 0)
         {
-            Debug.Log("yooo");
+            ParticleReceived();
 
         }
     }

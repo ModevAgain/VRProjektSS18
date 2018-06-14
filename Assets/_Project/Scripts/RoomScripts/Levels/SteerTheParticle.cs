@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class SteerTheParticle : ContentScript {
 
-    public ParticleTrigger PTrigger;
+    public ParticleCollision PCollision;
+    private bool _doorOpened;
 
 	// Use this for initialization
 	void Start () {
 
-        PTrigger.Finished = Finish;
+        PCollision.ParticleReceived += Finish;
 
 	}
 
 
     public void Finish()
     {
-        Door.OpenDoorFromButton();
+        if (!_doorOpened)
+        {
+            _doorOpened = true;
+            Door.OpenDoorFromButton();
+        }
     }
 
 }
