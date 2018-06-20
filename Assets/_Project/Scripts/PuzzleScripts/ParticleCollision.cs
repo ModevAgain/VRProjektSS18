@@ -7,6 +7,7 @@ public class ParticleCollision : MonoBehaviour
     private ParticleSystem _ps;
     List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
 
+    private bool _receivedParticle = false;
 
     public delegate void ParticleReceiver();
     public ParticleReceiver ParticleReceived;
@@ -14,6 +15,7 @@ public class ParticleCollision : MonoBehaviour
     private void Start()
     {
         _ps = GetComponent<ParticleSystem>();
+        _ps.simulationSpace = ParticleSystemSimulationSpace.World;
     }
 
     void OnParticleTrigger()
@@ -23,7 +25,15 @@ public class ParticleCollision : MonoBehaviour
 
         if (numEnter > 0)
         {
-            ParticleReceived();
+            if (!_receivedParticle)
+            {
+                _receivedParticle = true;
+                Debug.Log("received");
+                if (ParticleReceived != null)
+                {
+                    ParticleReceived();
+                }
+            }
 
         }
     }
