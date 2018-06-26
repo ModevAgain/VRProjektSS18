@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114695709467964674}
   - component: {fileID: 114802196077115928}
   - component: {fileID: 114381920178742840}
+  - component: {fileID: 114162271463121080}
   m_Layer: 0
   m_Name: Gun (1)
   m_TagString: Untagged
@@ -391,6 +392,17 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114162271463121080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1294362883617666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8952f8dbc33ea114f960140158ab87f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114194938901547506
 MonoBehaviour:
   m_ObjectHideFlags: 1
