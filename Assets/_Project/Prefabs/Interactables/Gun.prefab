@@ -22,10 +22,9 @@ GameObject:
   - component: {fileID: 54357700293049340}
   - component: {fileID: 65289067824056592}
   - component: {fileID: 114094505802641458}
-  - component: {fileID: 114695709467964674}
   - component: {fileID: 114802196077115928}
   - component: {fileID: 114381920178742840}
-  - component: {fileID: 114162271463121080}
+  - component: {fileID: 114386472453829652}
   m_Layer: 0
   m_Name: Gun (1)
   m_TagString: Untagged
@@ -111,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1294362883617666}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 8.300169, y: 0.06532489, z: 5.3428655}
+  m_LocalPosition: {x: 25.891418, y: 0.06532489, z: 11.236892}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4678138955816880}
@@ -383,7 +382,7 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 114695709467964674}
+  grabAttachMechanicScript: {fileID: 0}
   secondaryGrabActionScript: {fileID: 114381920178742840}
   isUsable: 1
   holdButtonToUse: 1
@@ -392,17 +391,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114162271463121080
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1294362883617666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8952f8dbc33ea114f960140158ab87f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114194938901547506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114695709467964674
+--- !u!114 &114386472453829652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -440,17 +428,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1294362883617666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   precisionGrab: 0
   rightSnapHandle: {fileID: 4785735178293218}
-  leftSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 4785735178293218}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
-  onGrabCollisionDelay: 0.5
-  destroyImmediatelyOnThrow: 1
-  breakForce: 1500
+  onGrabCollisionDelay: 0
 --- !u!114 &114802196077115928
 MonoBehaviour:
   m_ObjectHideFlags: 1
