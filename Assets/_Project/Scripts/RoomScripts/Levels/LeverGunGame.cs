@@ -4,30 +4,52 @@ using UnityEngine;
 
 public class LeverGunGame : ContentScript {
 
-    private DoorActivation _door;
-    private ParticleSystem _ps;
-    private ParticleCollision _particleCollision;
+    public ParticleCollision PCollision;
+    private bool _doorOpened;
 
-
-	// Use this for initialization
-	void Start () {
-        
-    }
-
-    public override IEnumerator Setup()
+    // Use this for initialization
+    void Start()
     {
-        yield return base.Setup();
 
-        _door = GetComponentInChildren<DoorActivation>();
-        _ps = GetComponentInChildren<ParticleSystem>();
-        _particleCollision = _ps.GetComponent<ParticleCollision>();
-
-        _particleCollision.ParticleReceived += LevelEnd;
+        PCollision.ParticleReceived += Finish;
 
     }
 
-    void LevelEnd()
+
+    public void Finish()
     {
-        _door.OpenDoorFromButton();
+        if (!_doorOpened)
+        {
+            _doorOpened = true;
+            Door.OpenDoorFromButton();
+        }
     }
+
+
+    //   private DoorActivation _door;
+    //   private ParticleSystem _ps;
+    //   private ParticleCollision _particleCollision;
+
+
+    //// Use this for initialization
+    //void Start () {
+
+    //   }
+
+    //   public override IEnumerator Setup()
+    //   {
+    //       yield return base.Setup();
+
+    //       _door = GetComponentInChildren<DoorActivation>();
+    //       _ps = GetComponentInChildren<ParticleSystem>();
+    //       _particleCollision = _ps.GetComponent<ParticleCollision>();
+
+    //       _particleCollision.ParticleReceived += LevelEnd;
+
+    //   }
+
+    //   void LevelEnd()
+    //   {
+    //       _door.OpenDoorFromButton();
+    //   }
 }

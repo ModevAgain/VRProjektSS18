@@ -6,6 +6,7 @@ using DG.Tweening;
 public class Target : MonoBehaviour {
     
     private TargetController _targetCon;
+    private Level_02 _lvlManager;
 
     private float _startPos;
     private float _maxMoveRange;
@@ -15,6 +16,7 @@ public class Target : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        _lvlManager = FindObjectOfType<Level_02>();
         _targetCon = GetComponentInParent<TargetController>();
 
         //_startPos = transform.parent.position.x;
@@ -26,17 +28,20 @@ public class Target : MonoBehaviour {
 	}
 	
     private void MoveTarget()
-    {        
-        if (_targetCon.MoveY)
-           _targetTweener = transform.DOLocalMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
-        else if (_targetCon.MoveX)
-            _targetTweener = transform.DOLocalMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
-        else if (_targetCon.MoveZ)
-            _targetTweener = transform.DOLocalMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+    {
+        if (!_lvlManager.levelFinished)
+        {
+            if (_targetCon.MoveY)
+               _targetTweener = transform.DOLocalMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            else if (_targetCon.MoveX)
+                _targetTweener = transform.DOLocalMoveX(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+            else if (_targetCon.MoveZ)
+                _targetTweener = transform.DOLocalMoveZ(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());
+        }
     }
 
     void OnCollisionEnter(Collision col)
-    {        
+    {
         if (col.gameObject.name == "Bullet(Clone)" && !_hit)
         {
             _hit = true;
