@@ -77,6 +77,8 @@ public class LeverRemote : MonoBehaviour {
     private void LeverRemote_ValueChanged(object sender, Control3DEventArgs e)
     {
         ControlledObj.MoveToNormedPos((e.normalizedValue) / 100);
+
+        
     }
 
 }

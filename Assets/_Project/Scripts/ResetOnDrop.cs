@@ -13,6 +13,7 @@ public class ResetOnDrop : MonoBehaviour {
     private Vector3 _startScale;
     private MeshRenderer _ren;
     private ReferenceManager _refMan;
+    private Rigidbody _rigid;
 
     // Use this for initialization
     void Start () {
@@ -25,7 +26,7 @@ public class ResetOnDrop : MonoBehaviour {
         if (_ren == null)
             _ren = GetComponentInChildren<MeshRenderer>();
         _refMan = FindObjectOfType<ReferenceManager>();
-
+        _rigid = GetComponent<Rigidbody>();
 	}
 
 
@@ -57,6 +58,12 @@ public class ResetOnDrop : MonoBehaviour {
             dissolver = _ren.material.DOFloat(1, "_DissolveIntensity", 1.2f);
 
             yield return dissolver.WaitForCompletion();
+        }
+
+        if(_rigid != null)
+        {
+            _rigid.velocity = Vector3.zero;
+            _rigid.angularVelocity = Vector3.zero;
         }
 
         transform.position = _startPos;

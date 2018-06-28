@@ -240,6 +240,9 @@ namespace VRTK
                 return;
             }
 
+            if (collider.gameObject.layer == LayerMask.NameToLayer("Interactables"))
+                return;
+
             if (enabled && !VRTK_PlayerObject.IsPlayerObject(collider.gameObject) && ValidTarget(collider.transform))
             {
                 parent.headsetColliding = true;

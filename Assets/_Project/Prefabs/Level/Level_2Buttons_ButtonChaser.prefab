@@ -170,7 +170,9 @@ GameObject:
   - component: {fileID: 64311945284883252}
   - component: {fileID: 114960331655407278}
   - component: {fileID: 54726513336409220}
-  m_Layer: 0
+  - component: {fileID: 114525385353763126}
+  - component: {fileID: 114095036199819704}
+  m_Layer: 21
   m_Name: Quaffel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +774,7 @@ Transform:
   m_GameObject: {fileID: 1152060916972882}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 1.011, y: 1.045, z: -0.006}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 4605652522270804}
   m_RootOrder: 15
@@ -810,7 +812,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121664621418074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12}
+  m_LocalPosition: {x: 0.01, y: -4.1166864e-18, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4837147265064840}
@@ -1473,7 +1475,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: ba0e180f15865e04e9ead013d8aa422d, type: 3}
+  - {fileID: 2100000, guid: 559f4d76dc70d644185a0c629f3b0b2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2335,7 +2337,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 1308549846126206}
   direction: 0
-  activationDistance: 0.044979263
+  activationDistance: 0.044979036
   buttonStrength: 5
   events:
     OnPush:
@@ -2943,6 +2945,23 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114095036199819704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152060916972882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec2ac476f2fc9a45a4e69712580a603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 0
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1.5
+  onGrabCollisionDelay: 0
 --- !u!114 &114126892974195832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5036,6 +5055,17 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
+--- !u!114 &114525385353763126
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152060916972882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8952f8dbc33ea114f960140158ab87f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114533815949014530
 MonoBehaviour:
   m_ObjectHideFlags: 1

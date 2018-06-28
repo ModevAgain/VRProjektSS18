@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using VRTK;
+using Oculus;
 
 public class ControlledBlock : ControlledObject
 {
@@ -22,15 +23,29 @@ public class ControlledBlock : ControlledObject
     [SerializeField]
     private bool _isInPlace;
 
+    private ReferenceManager _refs;
+
     private void Awake()
     {
         Selector = GetComponentInChildren<ParticleSystem>();
+        _refs = FindObjectOfType<ReferenceManager>();
         
     }
 
     public void Start()
     {
         transform.DOLocalMove(StartPos,0);
+    }
+
+    private void Update()
+    {
+        if (_isInPlace)
+            return;
+
+        if (_calculatedPos > DesiredPos - DesiredPosThreshold && _calculatedPos < DesiredPos + DesiredPosThreshold)
+        {
+            VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
+        }
     }
 
     public override void MoveToNormedPos(float pos)
@@ -48,10 +63,13 @@ public class ControlledBlock : ControlledObject
             transform.DOLocalMoveX(_calculatedPos, 0);
         else if (Axis == VRTK_Control.Direction.z)
             transform.DOLocalMoveZ(_calculatedPos, 0);
+
+       
     }
 
     public override bool IsControlledObjectOnTarget()
     {
+
 
         if (_calculatedPos > DesiredPos - DesiredPosThreshold && _calculatedPos < DesiredPos + DesiredPosThreshold)
         {

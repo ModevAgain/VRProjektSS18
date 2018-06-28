@@ -37,12 +37,14 @@ public class LeverGame : ContentScript {
         {
             ren.materials[0] = Materials[0];
             ren.material.DOFloat(1, "_DissolveIntensity", 0);
-            ren.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            //ren.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            ren.GetComponentInChildren<SpriteRenderer>().DOFade(0, 0f);
+
         }
 
         Button.SetActive(false);
 
-        Lever.Holder.transform.DOLocalMoveZ(LeverHolderStartZ, 0);
+        
 
         Lever.ObjFinishedCallBack = () => StartCoroutine(ObjFinished());
 
@@ -61,18 +63,16 @@ public class LeverGame : ContentScript {
         {
             ren.material.DOFloat(0, "_DissolveIntensity", 2).OnComplete(() =>
             {
-                ren.GetComponentInChildren<SpriteRenderer>().enabled = true;
+                //ren.GetComponentInChildren<SpriteRenderer>().enabled = true;
+                ren.GetComponentInChildren<SpriteRenderer>().DOFade(1, 2f);
                 //ren.materials[1] = Materials[1];
                 //ren.materials[1].DOColor(Color.red, 1);
 
                 if (doOnce)
-                {
-                    Lever.Holder.transform.DOLocalMoveZ(0, 2).OnComplete(() =>
-                    {
-                        Lever.ControlledObj = Objs[_objCount];
-                        Lever.ControlledObj.Selector.Play();
-                        Lever.enabled = true;
-                    });
+                {                    
+                    Lever.ControlledObj = Objs[_objCount];
+                    Lever.ControlledObj.Selector.Play();
+                    Lever.enabled = true;                    
                     doOnce = false;
                 }
 
@@ -92,9 +92,20 @@ public class LeverGame : ContentScript {
 
         yield return dissolver.WaitForCompletion();
 
+        foreach (var ren in Button.GetComponentsInChildren<MeshRenderer>())
+        {
+            ren.material.DOFloat(1, "_DissolveIntensity", 0);
+        }
+
         Field_Trans.DOLocalMoveX(-4, 2).OnComplete(() =>
         {
             Button.SetActive(true);
+
+            foreach (var ren in Button.GetComponentsInChildren<MeshRenderer>())
+            {
+                ren.material.DOFloat(0, "_DissolveIntensity", 1);
+            }
+
             Button.GetComponentInChildren<VRTK.VRTK_Button>().enabled = true;
         });
 
