@@ -17,6 +17,9 @@ public class Level_02 : ContentScript {
 
     private bool _windowIsOpen = false;
 
+    [HideInInspector]
+    public bool levelFinished = false;
+
     void Start ()
     {
         _targetCon = GetComponentInChildren<TargetController>();
@@ -39,7 +42,6 @@ public class Level_02 : ContentScript {
                 StartCoroutine(StopTargets());
             }
         }
-
     }
 
     private void StartTargets()
@@ -57,15 +59,18 @@ public class Level_02 : ContentScript {
     }
     
     private IEnumerator StopTargets()
-    {
+    {     
         yield return new WaitForSeconds(2);
         _windowTime = 0;
         _targetCon.DestroyAllTargets();
-        _targets.Clear();
+        _targets.Clear();        
     }
 
     private void LevelEnd()
     {
+        levelFinished = true;
+        StartCoroutine(_window.CloseWindow());
+        StartCoroutine(StopTargets());
         _door.OpenDoorFromButton();
     }
 

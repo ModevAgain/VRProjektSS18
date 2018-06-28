@@ -68,6 +68,8 @@ public class TargetController : MonoBehaviour {
 
         if (HitCounter >= TargetAmount)
         {
+            DestroyAllTargets();
+            
             if (AllTargetsDestroyed != null)
             {
                 AllTargetsDestroyed();

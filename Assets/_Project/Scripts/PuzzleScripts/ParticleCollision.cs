@@ -18,23 +18,35 @@ public class ParticleCollision : MonoBehaviour
         _ps.simulationSpace = ParticleSystemSimulationSpace.World;
     }
 
-    void OnParticleTrigger()
-    {       
-        // get the particles which matched the trigger conditions this frame
-        int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+    //void OnParticleTrigger()
+    //{        
+    //    // get the particles which matched the trigger conditions this frame
+    //    int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
 
-        if (numEnter > 0)
+    //    if (numEnter > 0 )
+    //    {
+    //        if (!_receivedParticle)
+    //        {
+    //            _receivedParticle = true;
+    //            Debug.Log("received");
+    //            if (ParticleReceived != null)
+    //            {
+    //                ParticleReceived();
+    //            }
+    //        }
+
+    //    }
+    //}
+
+    private void OnParticleCollision(GameObject other)
+    {
+        if(other.tag == "Goal")
         {
-            if (!_receivedParticle)
+            other.GetComponent<BoxCollider>().enabled = false;
+            if (ParticleReceived != null)
             {
-                _receivedParticle = true;
-                Debug.Log("received");
-                if (ParticleReceived != null)
-                {
-                    ParticleReceived();
-                }
+                ParticleReceived();
             }
-
         }
     }
 }
