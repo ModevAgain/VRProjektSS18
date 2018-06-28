@@ -16,11 +16,9 @@
     {
       Tags { "RenderType" = "TransparentCutout" }
 
-	   Pass {
-        ColorMask 0
-    }
-      Cull Off
-	  ZWrite Off		
+	  
+      
+	  
       CGPROGRAM
       #pragma surface surf Lambert addshadow
  
