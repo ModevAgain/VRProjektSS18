@@ -108,7 +108,7 @@ public class DoorActivation : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
 
-			Close ();
+			//Close ();
 
     }
 

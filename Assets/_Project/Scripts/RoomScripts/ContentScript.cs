@@ -28,7 +28,7 @@ public class ContentScript : MonoBehaviour {
     public IEnumerator CloseConnectionToOldRoom()
     {
         _connectionBlockCol.enabled = true;
-        Tween closer =  _connectionBlockMat.DOFloat(0, "_DissolveIntensity", 2);
+        Tween closer =  _connectionBlockMat.DOFloat(0, "_SliceAmount", 2);
 
         yield return closer.WaitForCompletion();
     }
@@ -36,7 +36,7 @@ public class ContentScript : MonoBehaviour {
     public virtual IEnumerator Setup()
     {
         _connectionBlockCol.enabled = false;
-        _connectionBlockMat.DOFloat(1, "_DissolveIntensity", 0);
+        _connectionBlockMat.DOFloat(1, "_SliceAmount", 0);
 
         yield return null;
     }
