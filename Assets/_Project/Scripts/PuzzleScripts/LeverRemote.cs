@@ -8,9 +8,7 @@ using VRTK.UnityEventHelper;
 public class LeverRemote : MonoBehaviour {
 
     public ControlledObject ControlledObj;
-
-    public GameObject Holder;
-
+    
     public Action ObjFinishedCallBack;
 
     private VRTK_Control_UnityEvents controlEvents;
@@ -19,14 +17,16 @@ public class LeverRemote : MonoBehaviour {
 
     private void Start()
     {
-        VRTK_Lever lever = gameObject.AddComponent<VRTK_Lever>();
-        lever.direction = VRTK_Lever.LeverDirection.y;
-        lever.minAngle = 0;
-        lever.maxAngle = maxLeverAngle;
-        lever.stepSize = 0.5f;
-        lever.grabbedFriction = 40;
-        lever.connectedTo = transform.parent.parent.gameObject;
-
+        if(GetComponent<VRTK_Lever>() == null)
+        {
+            VRTK_Lever lever = gameObject.AddComponent<VRTK_Lever>();
+            lever.direction = VRTK_Lever.LeverDirection.y;
+            lever.minAngle = 0;
+            lever.maxAngle = maxLeverAngle;
+            lever.stepSize = 0.5f;
+            lever.grabbedFriction = 40;
+            lever.connectedTo = transform.parent.parent.gameObject; 
+        }
         GetComponent<VRTK_InteractableObject>().InteractableObjectUngrabbed += LeverRemote_InteractableObjectUngrabbed;
         GetComponent<VRTK_Lever>().ValueChanged += LeverRemote_ValueChanged;
 
