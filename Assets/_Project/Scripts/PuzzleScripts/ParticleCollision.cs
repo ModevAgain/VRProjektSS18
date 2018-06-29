@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class ParticleCollision : MonoBehaviour
 {
@@ -11,32 +12,16 @@ public class ParticleCollision : MonoBehaviour
 
     public delegate void ParticleReceiver();
     public ParticleReceiver ParticleReceived;
+    private ReferenceManager _refs;
 
     private void Start()
     {
         _ps = GetComponent<ParticleSystem>();
         _ps.simulationSpace = ParticleSystemSimulationSpace.World;
+        _refs = FindObjectOfType<ReferenceManager>();
     }
 
-    //void OnParticleTrigger()
-    //{        
-    //    // get the particles which matched the trigger conditions this frame
-    //    int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
 
-    //    if (numEnter > 0 )
-    //    {
-    //        if (!_receivedParticle)
-    //        {
-    //            _receivedParticle = true;
-    //            Debug.Log("received");
-    //            if (ParticleReceived != null)
-    //            {
-    //                ParticleReceived();
-    //            }
-    //        }
-
-    //    }
-    //}
 
     private void OnParticleCollision(GameObject other)
     {
@@ -47,6 +32,10 @@ public class ParticleCollision : MonoBehaviour
             {
                 ParticleReceived();
             }
+        }
+        else if( other.tag == "Mirror")
+        {
+            VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
         }
     }
 }

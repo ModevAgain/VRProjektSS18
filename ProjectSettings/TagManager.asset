@@ -15,6 +15,7 @@ TagManager:
   - Hands
   - Goal
   - TeleportIgnore
+  - Mirror
   layers:
   - Default
   - TransparentFX

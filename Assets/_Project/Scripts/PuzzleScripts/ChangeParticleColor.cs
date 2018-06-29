@@ -14,6 +14,8 @@ public class ChangeParticleColor : MonoBehaviour
 
     public Action<ChangeParticleColor> Finished;
 
+    public AnimationCurve ColorCurve;
+
     private ParticleSystem _ps;
 
     // these lists are used to contain the particles which match
@@ -37,13 +39,15 @@ public class ChangeParticleColor : MonoBehaviour
     {
         float value = 1 - e.normalizedValue / 100;
 
-        _color = new Color(value, 1 - value, 0, 0.6f);
+        float animValue = ColorCurve.Evaluate(1 - value);
+
+        _color = new Color(value, Mathf.Clamp01(animValue), 0, 0.6f);
 
         var mm = _ps.main;
 
         mm.startColor = _color;
 
-        if (1 - value > 0.99f)
+        if (1 - value > 0.95f)
         {
             Finished(this);
             IsActive = true;
