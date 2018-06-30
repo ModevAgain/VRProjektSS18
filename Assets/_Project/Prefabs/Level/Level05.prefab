@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 23607188693383568}
   - component: {fileID: 64190268545670978}
   m_Layer: 0
-  m_Name: Raum_Start
+  m_Name: Raum_Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851162507646386}
-  m_LocalRotation: {x: -0, y: 0.00000008940697, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1770917793926302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.55, y: 1.182, z: 2.949}
+  m_LocalPosition: {x: 2.241, y: 1.182, z: 2.949}
   m_LocalScale: {x: 1.9381346, y: 1.9381361, z: 1.9381361}
   m_Children:
   - {fileID: 4827912925113502}
@@ -811,8 +811,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1906390556629800}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.25, y: 2.25, z: 0}
-  m_LocalScale: {x: 6, y: 1.5, z: 0.5}
+  m_LocalPosition: {x: 7.68, y: 2.229, z: 0}
+  m_LocalScale: {x: 6, y: 1.6518155, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4978543773001684}
   m_RootOrder: 2
@@ -894,7 +894,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1156255389317566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.875026, y: 3.6144557e-17, z: -15.015773}
+  m_LocalPosition: {x: -30.445976, y: 6.740943e-17, z: -28.004345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4451099636077634}
@@ -1653,7 +1653,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1851162507646386}
-  m_Mesh: {fileID: 4300000, guid: 346a75c7f244a3b4790978136b4a76ad, type: 3}
+  m_Mesh: {fileID: 4300000, guid: b0a7f4d02f5e0444cabf6fcd6d0bbc4e, type: 3}
 --- !u!33 &33991111731386670
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2286,7 +2286,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.015556765
+  activationDistance: 0.015559482
   buttonStrength: 5
   events:
     OnPush:
