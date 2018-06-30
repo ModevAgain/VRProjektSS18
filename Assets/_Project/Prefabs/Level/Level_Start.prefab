@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 4882606178730664}
   - component: {fileID: 33432861538064090}
   - component: {fileID: 23212206908658484}
+  - component: {fileID: 64237736194569794}
   m_Layer: 0
   m_Name: Raum_Start
   m_TagString: Untagged
@@ -452,7 +453,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1720651228604226}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.635, y: 1.146, z: 2.285}
+  m_LocalPosition: {x: 0.635, y: 1.146, z: 2.3518}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4813055934076160}
@@ -563,7 +564,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593799071652998}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.0024384242, y: 0.017047793, z: -0.010224519}
+  m_LocalPosition: {x: 0.0024384242, y: 0.035, z: -0.0102}
   m_LocalScale: {x: 8.638943, y: 8.638943, z: 8.638943}
   m_Children: []
   m_Father: {fileID: 4488283588416430}
@@ -1117,6 +1118,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1180638910662246}
   m_Mesh: {fileID: 4300002, guid: 2be11b6973e1b964499de94eca94acac, type: 3}
+--- !u!64 &64237736194569794
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407669198670022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 346a75c7f244a3b4790978136b4a76ad, type: 3}
 --- !u!65 &65407896163117136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1307,7 +1322,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.03111534
+  activationDistance: 0.06522453
   buttonStrength: 5
   events:
     OnPush:

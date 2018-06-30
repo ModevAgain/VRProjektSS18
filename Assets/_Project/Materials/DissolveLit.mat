@@ -69,7 +69,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DissolveEdgeMultiplier: 5.12
     - _DissolveEdgeRange: 0.079
-    - _DissolveIntensity: 1
+    - _DissolveIntensity: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.787
