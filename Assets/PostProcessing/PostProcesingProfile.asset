@@ -33,10 +33,10 @@ MonoBehaviour:
     m_Settings:
       method: 0
       fxaaSettings:
-        preset: 4
+        preset: 3
       taaSettings:
-        jitterSpread: 0.75
-        sharpen: 0.3
+        jitterSpread: 0.32
+        sharpen: 0.075
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
