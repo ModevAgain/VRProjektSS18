@@ -42,9 +42,12 @@ public class ControlledBlock : ControlledObject
         if (_isInPlace)
             return;
 
-        if (_calculatedPos > DesiredPos - DesiredPosThreshold && _calculatedPos < DesiredPos + DesiredPosThreshold)
+        if(Controller != null)
         {
-            VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
+            if (_calculatedPos > DesiredPos - DesiredPosThreshold && _calculatedPos < DesiredPos + DesiredPosThreshold)
+            {
+                VRTK_ControllerHaptics.TriggerHapticPulse(Controller, 1);
+            }
         }
     }
 
@@ -99,4 +102,6 @@ public abstract class ControlledObject : MonoBehaviour
     public abstract void MoveToNormedPos(float pos);
 
     public abstract bool IsControlledObjectOnTarget();
+
+    public VRTK_ControllerReference Controller;
 }

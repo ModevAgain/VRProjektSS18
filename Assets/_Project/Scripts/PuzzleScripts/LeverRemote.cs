@@ -15,6 +15,8 @@ public class LeverRemote : MonoBehaviour {
 
     public float maxLeverAngle = -120;
 
+    private ReferenceManager _refs;
+
     private void Start()
     {
         if(GetComponent<VRTK_Lever>() == null)
@@ -27,10 +29,26 @@ public class LeverRemote : MonoBehaviour {
             lever.grabbedFriction = 40;
             lever.connectedTo = transform.parent.parent.gameObject; 
         }
+        GetComponent<VRTK_InteractableObject>().InteractableObjectGrabbed += LeverRemote_InteractableObjectGrabbed;   ;
         GetComponent<VRTK_InteractableObject>().InteractableObjectUngrabbed += LeverRemote_InteractableObjectUngrabbed;
         GetComponent<VRTK_Lever>().ValueChanged += LeverRemote_ValueChanged;
 
+        _refs = FindObjectOfType<ReferenceManager>();
+
         Debug.Log("Remote:Start()");
+    }
+
+    private void LeverRemote_InteractableObjectGrabbed(object sender, InteractableObjectEventArgs e)
+    {
+        if (ControlledObj != null)
+        {
+            if (e.interactingObject == _refs.RightController.model)
+            {
+                ControlledObj.Controller = _refs.RightController;
+            }
+            else ControlledObj.Controller  = _refs.LeftController;
+        }
+            
     }
 
     private void LeverRemote_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)

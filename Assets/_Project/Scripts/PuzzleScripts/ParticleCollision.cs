@@ -35,7 +35,13 @@ public class ParticleCollision : MonoBehaviour
         }
         else if( other.tag == "Mirror")
         {
-            VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
+
+            if (other.GetComponent<VRTK_InteractableObject>().GetGrabbingObject() == _refs.RightController.model)
+            {
+                VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
+            }
+            else VRTK_ControllerHaptics.TriggerHapticPulse(_refs.LeftController, 1);
+
         }
     }
 }

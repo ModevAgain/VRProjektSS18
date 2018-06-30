@@ -10,10 +10,12 @@
         private ReferenceManager _refs;
         private AudioSource _audioSrc;
         private ParticleSystem _ps;
+        private VRTK_ControllerReference _controller;
 
         public override void StartUsing(VRTK_InteractUse usingObject)
         {
             base.StartUsing(usingObject);
+            
             FireBullet();
         }
 
@@ -24,11 +26,22 @@
             _refs = FindObjectOfType<ReferenceManager>();
             _audioSrc = GetComponent<AudioSource>();
             _ps = GetComponentInChildren<ParticleSystem>();
+
+            InteractableObjectGrabbed += Gun_InteractableObjectGrabbed;
+        }
+
+        private void Gun_InteractableObjectGrabbed(object sender, InteractableObjectEventArgs e)
+        {
+            if (e.interactingObject == _refs.RightController.model)
+            {
+                _controller = _refs.RightController;
+            }
+            else _controller = _refs.LeftController;
         }
 
         private void FireBullet()
         {
-            VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, _audioSrc.clip);
+            VRTK_ControllerHaptics.TriggerHapticPulse(_controller, _audioSrc.clip);
             _audioSrc.Play();
             _ps.Play();
 
