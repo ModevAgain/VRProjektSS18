@@ -473,7 +473,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1308549846126206}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.146, z: 2.426}
+  m_LocalPosition: {x: -0.1, y: 1.146, z: 2.426}
   m_LocalScale: {x: 2.8911185, y: 2.8911188, z: 2.8911188}
   m_Children:
   - {fileID: 4472901457565084}
@@ -1516,7 +1516,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 1308549846126206}
   direction: 0
-  activationDistance: 0.04497881
+  activationDistance: 0.044979263
   buttonStrength: 5
   events:
     OnPush:

@@ -10,18 +10,16 @@ public class ButtonChasers : MonoBehaviour {
 
     private VRTK_Button _btn;
 
+    private Vector3 initPos;
 
 	// Use this for initialization
 	void Start () {
 
+        initPos = transform.localPosition;
+
         _col = GetComponent<Collider>();
         _btn = GetComponentInChildren<VRTK_Button>();
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
     public void Move()
@@ -32,11 +30,11 @@ public class ButtonChasers : MonoBehaviour {
         Tween t = null;
 
 
-        if (transform.localPosition.x == 0)
+        if (transform.localPosition.x == initPos.x)
         {
-            t = transform.DOLocalMoveX(-2, 0.2f);
+            t = transform.DOLocalMoveX(-1.9f, 0.2f);
         }
-        else t = transform.DOLocalMoveX(0, 0.2f);
+        else t = transform.DOLocalMoveX(initPos.x, 0.2f);
 
         t.OnComplete(() =>
         {
