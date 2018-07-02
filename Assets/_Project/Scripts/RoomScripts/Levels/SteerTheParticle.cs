@@ -5,14 +5,16 @@ using UnityEngine;
 public class SteerTheParticle : ContentScript {
 
     public ParticleCollision PCollision;
+    public Collider ParticleKiller;
     private bool _doorOpened;
 
 	// Use this for initialization
 	void Start () {
 
         PCollision.ParticleReceived += Finish;
+        ParticleKiller.enabled = false;
 
-	}
+    }
 
 
     public void Finish()
@@ -21,6 +23,7 @@ public class SteerTheParticle : ContentScript {
         {
             _doorOpened = true;
             Door.OpenDoorFromButton();
+            ParticleKiller.enabled = true;
         }
     }
 

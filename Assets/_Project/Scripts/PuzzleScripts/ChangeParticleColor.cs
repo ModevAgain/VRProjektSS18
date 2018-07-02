@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
+using DG.Tweening;
 
 [ExecuteInEditMode]
 public class ChangeParticleColor : MonoBehaviour
@@ -15,6 +16,8 @@ public class ChangeParticleColor : MonoBehaviour
     public Action<ChangeParticleColor> Finished;
 
     public AnimationCurve ColorCurve;
+
+    public Color TargetColor;
 
     private ParticleSystem _ps;
 
@@ -41,9 +44,13 @@ public class ChangeParticleColor : MonoBehaviour
 
         float animValue = ColorCurve.Evaluate(1 - value);
 
-        _color = new Color(value, Mathf.Clamp01(animValue), 0, 0.6f);
+        //_color = new Color(value, Mathf.Clamp01(animValue), 0, 0.6f);
+
+        _color = Color.Lerp(Color.red, TargetColor, Mathf.Clamp01(animValue));
 
         var mm = _ps.main;
+
+        
 
         mm.startColor = _color;
 
@@ -66,7 +73,7 @@ public class ChangeParticleColor : MonoBehaviour
         for (int i = 0; i < numEnter; i++)
         {
             ParticleSystem.Particle p = enter[i];
-            p.startColor = new Color32(0, 255, 0, 255);
+            p.startColor = TargetColor;
             enter[i] = p;
         }
 

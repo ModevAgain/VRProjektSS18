@@ -42,7 +42,7 @@ public class LeverRemote : MonoBehaviour {
     {
         if (ControlledObj != null)
         {
-            if (e.interactingObject == _refs.RightController.model)
+            if (e.interactingObject == _refs.RightController.actual.transform.GetChild(0).gameObject)
             {
                 ControlledObj.Controller = _refs.RightController;
             }

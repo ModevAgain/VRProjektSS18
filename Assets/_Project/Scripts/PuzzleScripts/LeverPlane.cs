@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class LeverPlane : MonoBehaviour {
 
-    private float _minPos = 0.186f;
+    private float _minPos = 0.172f;
     private float _maxPos = 2.2f;
     
     public Transform ControlledPlane;
@@ -17,6 +17,7 @@ public class LeverPlane : MonoBehaviour {
 
         VRTK_Lever lever = GetComponent<VRTK_Lever>();
         lever.ValueChanged += LeverRemote_ValueChanged;
+        ControlledPlane.DOLocalMoveY(_minPos, 0);
     }
 
     private void LeverRemote_ValueChanged(object sender, Control3DEventArgs e)

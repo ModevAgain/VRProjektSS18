@@ -32,7 +32,10 @@
 
         private void Gun_InteractableObjectGrabbed(object sender, InteractableObjectEventArgs e)
         {
-            if (e.interactingObject == _refs.RightController.model)
+            //Debug.Log(e.interactingObject);
+
+            //Debug.Log("ref: " + _refs.RightController.actual);
+            if (e.interactingObject == _refs.RightController.actual.transform.GetChild(0).gameObject)
             {
                 _controller = _refs.RightController;
             }
@@ -41,6 +44,7 @@
 
         private void FireBullet()
         {
+            //Debug.Log(_controller.model);
             VRTK_ControllerHaptics.TriggerHapticPulse(_controller, _audioSrc.clip);
             _audioSrc.Play();
             _ps.Play();

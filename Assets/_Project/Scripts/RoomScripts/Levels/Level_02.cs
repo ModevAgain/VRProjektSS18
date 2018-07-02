@@ -26,7 +26,6 @@ public class Level_02 : ContentScript {
         _targetCon.AllTargetsDestroyed += LevelEnd;
         _door = GetComponentInChildren<DoorActivation>();
         _window = GetComponentInChildren<Window>();
-        Debug.Log(_window);
         _window.WindowIsOpen += StartTargets;         
     }
 

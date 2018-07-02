@@ -12,6 +12,8 @@ public class ParticleCollision : MonoBehaviour
 
     public delegate void ParticleReceiver();
     public ParticleReceiver ParticleReceived;
+
+
     private ReferenceManager _refs;
 
     private void Start()
@@ -36,7 +38,7 @@ public class ParticleCollision : MonoBehaviour
         else if( other.tag == "Mirror")
         {
 
-            if (other.GetComponent<VRTK_InteractableObject>().GetGrabbingObject() == _refs.RightController.model)
+            if (other.GetComponent<VRTK_InteractableObject>().GetGrabbingObject() == _refs.RightController.actual.transform.GetChild(0).gameObject)
             {
                 VRTK_ControllerHaptics.TriggerHapticPulse(_refs.RightController, 1);
             }

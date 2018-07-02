@@ -42,9 +42,14 @@ public class LeverGame : ContentScript {
 
         }
 
-        Button.SetActive(false);
+        //Button.SetActive(false);
 
-        
+        foreach (var ren in Button.GetComponentsInChildren<MeshRenderer>())
+        {
+            ren.material.DOFloat(1, "_SliceAmount", 0);
+        }
+
+
 
         Lever.ObjFinishedCallBack = () => StartCoroutine(ObjFinished());
 
@@ -92,10 +97,12 @@ public class LeverGame : ContentScript {
 
         yield return dissolver.WaitForCompletion();
 
-        foreach (var ren in Button.GetComponentsInChildren<MeshRenderer>())
+        foreach(var s in GetComponentsInChildren<MoveSprite>())
         {
-            ren.material.DOFloat(1, "_DissolveIntensity", 0);
+            s.Move();
         }
+
+        yield return new WaitForSeconds(1);
 
         Field_Trans.DOLocalMoveX(-4, 2).OnComplete(() =>
         {
@@ -103,16 +110,16 @@ public class LeverGame : ContentScript {
 
             foreach (var ren in Button.GetComponentsInChildren<MeshRenderer>())
             {
-                ren.material.DOFloat(0, "_DissolveIntensity", 1);
+                ren.material.DOFloat(0, "_SliceAmount", 1);
             }
 
-            Button.GetComponentInChildren<VRTK.VRTK_Button>().enabled = true;
         });
 
         
         
 
     }
+
 
     public IEnumerator ObjFinished()
     {

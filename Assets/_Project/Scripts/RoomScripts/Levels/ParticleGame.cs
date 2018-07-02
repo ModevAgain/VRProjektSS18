@@ -51,7 +51,7 @@ public class ParticleGame : ContentScript {
         _doorOpened = true;
 
         ParticleSystem.MainModule mm = PS_ForDoor.main;
-        mm.startColor = new Color(0, 1, 0, 0.6f);
+        mm.startColor = ChangeParticle_Lever.TargetColor;
         yield return new WaitForSeconds(0.5f);
         Door.OpenDoorFromButton();
     }
