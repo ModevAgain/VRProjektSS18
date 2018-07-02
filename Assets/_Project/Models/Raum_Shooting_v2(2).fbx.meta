@@ -1,16 +1,30 @@
 fileFormatVersion: 2
-guid: bf48c5c525f7ef8418109658963eb269
-timeCreated: 1530286431
+guid: d8a59c8149cd25646aa6c3761acb952f
+timeCreated: 1530535609
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Circle
+    100000: _DissolveWall
+    100002: _DissolveWall_GunRoom
+    100004: _Raum_Gun-v2
+    100006: //RootNode
+    400000: _DissolveWall
+    400002: _DissolveWall_GunRoom
+    400004: _Raum_Gun-v2
+    400006: //RootNode
+    2100000: "WandS\xE4ulen"
+    2100002: InnerWall
+    2100004: BorderGunLevel
+    2300000: _DissolveWall
+    2300002: _DissolveWall_GunRoom
+    2300004: _Raum_Gun-v2
+    3300000: _DissolveWall
+    3300002: _DissolveWall_GunRoom
+    3300004: _Raum_Gun-v2
+    4300000: _Raum_Gun-v2
+    4300002: _DissolveWall_GunRoom
+    4300004: _DissolveWall
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 50
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

@@ -12,12 +12,14 @@ public class Window : MonoBehaviour {
 
     public float WindowCounter;
     private float _counter;
+    private MeshCollider _collider;
 
     public delegate void WindowOpened();
     public WindowOpened WindowIsOpen;
 
 	// Use this for initialization
 	void Start () {
+        _collider = GetComponent<MeshCollider>();
         _windowMat = GetComponent<MeshRenderer>().material;
         _windowMat.DOFloat(0, "_Level", 0);
 	}
@@ -34,10 +36,11 @@ public class Window : MonoBehaviour {
     private IEnumerator OpenWindow()
     {
         Debug.Log("Open Window");
-        Tween _openWindow= _windowMat.DOFloat(1, "_DissolveIntensity", 2);
+        Tween _openWindow= _windowMat.DOFloat(1, "_SliceAmount", 2);
 
         yield return _openWindow.WaitForCompletion();
 
+        _collider.enabled = false;
         if (WindowIsOpen != null)
         {
             WindowIsOpen();
@@ -48,9 +51,10 @@ public class Window : MonoBehaviour {
     {
         Debug.Log("Close Window");
 
-        Tween _closeWindow = _windowMat.DOFloat(0, "_DissolveIntensity", 2);
+        Tween _closeWindow = _windowMat.DOFloat(0, "_SliceAmount", 2);
 
         yield return _closeWindow.WaitForCompletion();
+        _collider.enabled = true;
         _windowOpended = false;
     }
 
