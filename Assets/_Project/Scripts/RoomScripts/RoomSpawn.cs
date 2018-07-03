@@ -26,8 +26,8 @@ public class RoomSpawn : MonoBehaviour {
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //    spawnRoom();
+        if (Input.GetKeyDown(KeyCode.Space))
+            spawnRoom();
     }
 
     void spawnRoom()

@@ -4,6 +4,7 @@
 
     public class Gun : VRTK_InteractableObject
     {
+        public Collider MainCollider;
         private GameObject bullet;
         private float bulletSpeed = 2000f;
         private float bulletLife = 5f;
@@ -28,13 +29,19 @@
             _ps = GetComponentInChildren<ParticleSystem>();
 
             InteractableObjectGrabbed += Gun_InteractableObjectGrabbed;
+            InteractableObjectUngrabbed += Gun_InteractableObjectUngrabbed;
+        }
+
+        private void Gun_InteractableObjectUngrabbed(object sender, InteractableObjectEventArgs e)
+        {
+            MainCollider.enabled = true;
         }
 
         private void Gun_InteractableObjectGrabbed(object sender, InteractableObjectEventArgs e)
         {
-            //Debug.Log(e.interactingObject);
+            MainCollider.enabled = false;
 
-            //Debug.Log("ref: " + _refs.RightController.actual);
+
             if (e.interactingObject == _refs.RightController.actual.transform.GetChild(0).gameObject)
             {
                 _controller = _refs.RightController;

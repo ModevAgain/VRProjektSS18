@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 4432732736887688}
   - component: {fileID: 114277561713741284}
   m_Layer: 0
-  m_Name: Level_2Buttons_Noo
+  m_Name: Level_Noo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 4022256982622362}
   - component: {fileID: 33679282137130102}
   - component: {fileID: 23769738931792604}
+  - component: {fileID: 64216497198850196}
   m_Layer: 0
   m_Name: Raum_Start
   m_TagString: Untagged
@@ -495,7 +496,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1542491203345208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 7.25}
+  m_LocalPosition: {x: 0, y: 0, z: 27.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4590675983341108}
@@ -1386,6 +1387,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!64 &64216497198850196
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1910174145665902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 346a75c7f244a3b4790978136b4a76ad, type: 3}
 --- !u!64 &64978463256689566
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -1422,8 +1437,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.43}
-  m_Center: {x: 0, y: 0, z: 0.52}
+  m_Size: {x: 1, y: 1, z: 0.12}
+  m_Center: {x: 0, y: 0, z: 0.35}
 --- !u!65 &65854039949737732
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1762,7 +1777,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.03111534
+  activationDistance: 0.031118965
   buttonStrength: 5
   events:
     OnPush:
@@ -1817,7 +1832,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.03111534
+  activationDistance: 0.031118965
   buttonStrength: 5
   events:
     OnPush:

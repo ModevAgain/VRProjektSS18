@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 65618640654446642}
   - component: {fileID: 114464056100650712}
   - component: {fileID: 114503554994598006}
+  - component: {fileID: 114325347228279224}
   m_Layer: 20
   m_Name: MovableCollisionPlane
   m_TagString: Mirror
@@ -757,7 +758,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130282633947074}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.14, y: 1.146, z: 2.426}
+  m_LocalPosition: {x: -0.14, y: 1.146, z: 2.477}
   m_LocalScale: {x: 2.8911185, y: 2.8911188, z: 2.8911188}
   m_Children:
   - {fileID: 4184804390373664}
@@ -788,7 +789,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194307991977156}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.63, y: 1.265, z: 2.435}
+  m_LocalPosition: {x: -0.63, y: 1.265, z: 2.5781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4427124084484582}
@@ -1264,7 +1265,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1602374333291302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.26593, y: -3.0484114e-17, z: 12.664217}
+  m_LocalPosition: {x: 0, y: 0, z: 78.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4500169039075308}
@@ -2648,6 +2649,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114325347228279224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165778508506596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183f0d734a3fd684c8f9654407bfa029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCollider: {fileID: 65207332780837276}
 --- !u!114 &114328281112140688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2692,7 +2705,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 1130282633947074}
   direction: 0
-  activationDistance: 0.044979263
+  activationDistance: 0.044979077
   buttonStrength: 5
   events:
     OnPush:
@@ -2803,7 +2816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.034482718, g: 1, b: 0, a: 0}
+  touchHighlightColor: {r: 0.8156863, g: 1, b: 0.9019608, a: 1}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
@@ -2885,7 +2898,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -2935,7 +2948,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1906467030
+  randomSeed: 133332749
   InitialModule:
     serializedVersion: 3
     enabled: 1

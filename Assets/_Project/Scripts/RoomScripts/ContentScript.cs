@@ -27,8 +27,9 @@ public class ContentScript : MonoBehaviour {
 
     public IEnumerator CloseConnectionToOldRoom()
     {
+        yield return new WaitForSeconds(1.5f);
         _connectionBlockCol.enabled = true;
-        Tween closer =  _connectionBlockMat.DOFloat(0, "_SliceAmount", 2);
+        Tween closer =  _connectionBlockMat.DOFloat(0, "_SliceAmount", 2); 
 
         yield return closer.WaitForCompletion();
     }

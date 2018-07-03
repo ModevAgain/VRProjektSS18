@@ -2,6 +2,7 @@
 {
     Properties
     {
+	  _Color ("Color", Color) = (1,1,1,0)
       _MainTex ("Texture", 2D) = "white" {}      
       _BumpMap ("Normal Map", 2D) = "bump" {}
       _BumpPower ("Normal Power", float) = 1
@@ -36,12 +37,14 @@
       sampler2D _BumpMap;
       sampler2D _DissolveTex;
       
+	  uniform float4 _Color;
       uniform float _BumpPower;      
       uniform float4 _DissolveEdgeColor;      
       uniform float _DissolveEdgeRange;
       uniform float _DissolveIntensity;
       uniform float _DissolveEdgeMultiplier;
-                
+          
+	
       void surf (Input IN, inout SurfaceOutput o)
       {
       	
@@ -51,7 +54,7 @@
         clip( dissolveClip );
         
         float4 texColor = tex2D(_MainTex, IN.uv_MainTex);                
-        o.Albedo = lerp( texColor, _DissolveEdgeColor, min(1, edgeRamp * _DissolveEdgeMultiplier) );
+        o.Albedo = lerp( texColor * _Color, _DissolveEdgeColor, min(1, edgeRamp * _DissolveEdgeMultiplier) );
                 
         fixed3 normal = UnpackNormal( tex2D (_BumpMap, IN.uv_BumpMap) );
         normal.z /= _BumpPower;

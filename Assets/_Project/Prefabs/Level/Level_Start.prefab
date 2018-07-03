@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 4569872120824764}
   - component: {fileID: 33243613268573748}
   - component: {fileID: 23884606148449430}
+  - component: {fileID: 64555785790013244}
   m_Layer: 0
   m_Name: DissolveWall
   m_TagString: Untagged
@@ -296,6 +297,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1775050423594600
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4499519621960830}
+  - component: {fileID: 65844270224679586}
+  - component: {fileID: 114165365657176802}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1958670171124116
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +480,19 @@ Transform:
   m_Father: {fileID: 4295499187962220}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!4 &4499519621960830
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775050423594600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.803, z: -1.632}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4744093098368632}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4504198662923318
 Transform:
   m_ObjectHideFlags: 1
@@ -554,6 +585,7 @@ Transform:
   - {fileID: 4569872120824764}
   - {fileID: 4882606178730664}
   - {fileID: 4561153741814158}
+  - {fileID: 4499519621960830}
   m_Father: {fileID: 4854280672017078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -564,7 +596,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1593799071652998}
   m_LocalRotation: {x: -0.7071069, y: -0, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.0024384242, y: 0.035, z: -0.0102}
+  m_LocalPosition: {x: 0.0024384242, y: 0.0201, z: -0.0102}
   m_LocalScale: {x: 8.638943, y: 8.638943, z: 8.638943}
   m_Children: []
   m_Father: {fileID: 4488283588416430}
@@ -577,7 +609,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1141473787608152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4744093098368632}
@@ -1132,6 +1164,20 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 346a75c7f244a3b4790978136b4a76ad, type: 3}
+--- !u!64 &64555785790013244
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1274296908981364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 346a75c7f244a3b4790978136b4a76ad, type: 3}
 --- !u!65 &65407896163117136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1143,6 +1189,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65844270224679586
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775050423594600}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.71, y: 1.51, z: 0.53}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65870677505317200
 BoxCollider:
@@ -1167,7 +1225,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.12}
-  m_Center: {x: 0, y: 0, z: 0.46}
+  m_Center: {x: 0, y: 0, z: 0.34}
 --- !u!82 &82786238868365310
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1322,7 +1380,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.06522453
+  activationDistance: 0.036917303
   buttonStrength: 5
   events:
     OnPush:
@@ -1341,6 +1399,17 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &114165365657176802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775050423594600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab5cbacbf922dc43a57a98c05b3d02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114333943724220030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1379,4 +1448,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Door: {fileID: 114333943724220030}
-  ConnectionBlock: {fileID: 0}
+  ConnectionBlock: {fileID: 1274296908981364}
