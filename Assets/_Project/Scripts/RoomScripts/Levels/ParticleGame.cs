@@ -7,6 +7,7 @@ public class ParticleGame : ContentScript {
 
     public ChangeParticleColor ChangeParticle_Lever;
     public ChangeParticleColor ChangeParticle_Col;
+    public ChangeParticleForDoor ChangeParticle_Door;
 
     public ParticleSystem PS_ForDoor;
 
@@ -19,8 +20,9 @@ public class ParticleGame : ContentScript {
 
         ChangeParticle_Col.Finished = RegisterFinishedParticleSystem;
         ChangeParticle_Lever.Finished = RegisterFinishedParticleSystem;
+        ChangeParticle_Door.Finished = FastForwardGoal;
 
-	}
+    }
 
 
     private void Update()
@@ -33,6 +35,12 @@ public class ParticleGame : ContentScript {
             _doorOpened = true;
             StartCoroutine(FinishRoom());
         }
+    }
+
+    private void FastForwardGoal()
+    {
+        _doorOpened = true;
+        StartCoroutine(FinishRoom());
     }
 
     public void RegisterFinishedParticleSystem(ChangeParticleColor sender, bool active)
