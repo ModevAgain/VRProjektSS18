@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 114289339855325840}
   - component: {fileID: 114381220007274920}
   - component: {fileID: 114840032934639520}
+  - component: {fileID: 114027572880450198}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -2392,7 +2393,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e5ad8c34cac3c224ca6dc55784cb5237, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.09
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2541,6 +2542,21 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!114 &114027572880450198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853219321277266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 0
+  checkType: 1
+  identifiers:
+  - DontFade
 --- !u!114 &114042426809976128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2698,7 +2714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreTriggerColliders: 1
   colliderRadius: 0.1
-  targetListPolicy: {fileID: 0}
+  targetListPolicy: {fileID: 114027572880450198}
   headsetColliding: 0
   collidingWith: {fileID: 0}
 --- !u!114 &114121782726646482
