@@ -56,12 +56,14 @@ public class ParticleGame : ContentScript {
         
     }
 
-    public IEnumerator FinishRoom()
+    public IEnumerator FinishRoom(bool ff = false)
     {
         _doorOpened = true;
-
-        ParticleSystem.MainModule mm = PS_ForDoor.main;
-        mm.startColor = ChangeParticle_Lever.TargetColor;
+        if (!ff)
+        {
+            ParticleSystem.MainModule mm = PS_ForDoor.main;
+            mm.startColor = ChangeParticle_Lever.TargetColor;
+        }
         yield return new WaitForSeconds(0.5f);
         Door.OpenDoorFromButton();
     }

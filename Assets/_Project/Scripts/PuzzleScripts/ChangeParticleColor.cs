@@ -56,7 +56,7 @@ public class ChangeParticleColor : MonoBehaviour
 
         mm.startColor = _color;
 
-        if (1 - value > 0.95f)
+        if (1 - value > 0.90f)
         {
             Finished(this,true);
             IsActive = true;
