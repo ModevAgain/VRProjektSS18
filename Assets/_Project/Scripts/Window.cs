@@ -39,10 +39,10 @@ public class Window : MonoBehaviour {
     {
         Debug.Log("Open Window");
         Tween _openWindow= _windowMat.DOFloat(1, "_SliceAmount", 2);
+        _collider.enabled = false;
 
         yield return _openWindow.WaitForCompletion();
 
-        _collider.enabled = false;
         if (WindowIsOpen != null)
         {
             WindowIsOpen();
@@ -54,9 +54,9 @@ public class Window : MonoBehaviour {
         Debug.Log("Close Window");
 
         Tween _closeWindow = _windowMat.DOFloat(0, "_SliceAmount", 2);
+        _collider.enabled = true;
 
         yield return _closeWindow.WaitForCompletion();
-        _collider.enabled = true;
         _windowOpended = false;
     }
 
