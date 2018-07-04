@@ -16,11 +16,12 @@ public class RoomSpawn : MonoBehaviour {
     private float _currentYPos = 0;
 	private ContentScript _currentRoom;
 	private ContentScript _oldRoom;
+    private EndGame _end;
 
 	// Use this for initialization
 	void Start () {
         spawnRoom();
-
+        _end = FindObjectOfType<EndGame>();
         
 	}
 
@@ -33,10 +34,18 @@ public class RoomSpawn : MonoBehaviour {
     void spawnRoom()
     {
 
+
+
         //_currentRoom -> _oldRoom
         if (_currentRoom != null)
 			_oldRoom = _currentRoom;
 
+        if(_roomCounter >= LevelData.Rooms.Count)
+        {
+            _end.EnableEndGame();
+
+            return;
+        }
 
         GameObject tempRoom = LevelData.Rooms[_roomCounter].RoomObj;
 
@@ -63,6 +72,14 @@ public class RoomSpawn : MonoBehaviour {
         yield return _currentRoom.CloseConnectionToOldRoom();
 		Destroy (_oldRoom.gameObject);
 
-	}
+
+        if (_roomCounter >= LevelData.Rooms.Count)
+        {
+
+            StartCoroutine(_end.StartEndGame());
+            
+        }
+
+    }
 
 }

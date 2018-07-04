@@ -620,6 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4709256616855388}
   - component: {fileID: 114870168365594718}
+  - component: {fileID: 114291423137956572}
   m_Layer: 0
   m_Name: SDKSetups
   m_TagString: Untagged
@@ -1510,7 +1511,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1489185279507044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.23, z: -2.08}
+  m_LocalPosition: {x: 2.67, y: 1.23, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4146262697249288}
@@ -3096,6 +3097,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44596d094d0946345a7fc6688ba9c06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114291423137956572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1541801863221096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642ef4836907a924e9c634d962724e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Head: {fileID: 1306908869043192}
+  Holder: {fileID: 1489185279507044}
 --- !u!114 &114293683135486946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3709,7 +3723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114657460752940256}
   listenOnAxisChange: 0
-  CustomRotator: {fileID: 114870168365594718}
+  CustomRotator: {fileID: 114291423137956572}
   anglePerSnap: 45
   angleMultiplier: 1.5
   snapDelay: 0.5
@@ -4432,7 +4446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectControlScript: {fileID: 114657460752940256}
   listenOnAxisChange: 0
-  CustomRotator: {fileID: 114870168365594718}
+  CustomRotator: {fileID: 114291423137956572}
   anglePerSnap: 45
   angleMultiplier: 1.5
   snapDelay: 0.5

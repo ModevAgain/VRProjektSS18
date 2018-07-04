@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Name: LevelData_Test
   m_EditorClassIdentifier: 
   Rooms:
-  - RoomObj: {fileID: 1602374333291302, guid: 28970508f1e251943962e818a59b9c1e, type: 2}
-    Width: 0
-  - RoomObj: {fileID: 1746137694744124, guid: 1f5066156af95c54987d960868a97636, type: 2}
-    Width: 6
+  - RoomObj: {fileID: 1141473787608152, guid: 1ae34b748b94e534aacf7321f18734b6, type: 2}
+    Width: 14
