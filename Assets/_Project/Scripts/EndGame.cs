@@ -10,7 +10,7 @@ public class EndGame : MonoBehaviour
     public GameObject Dome;
     public Text Thanks;
     public PostProcessingBehaviour PPB;
-    private bool _enabled;
+    public bool Enabled;
 
     // Use this for initialization
     void Start()
@@ -46,7 +46,7 @@ public class EndGame : MonoBehaviour
 
     public void EnableEndGame()
     {
-        _enabled = true;
+        Enabled = true;
     }
 
 }

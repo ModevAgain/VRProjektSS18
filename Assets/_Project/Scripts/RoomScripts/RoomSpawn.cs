@@ -73,9 +73,8 @@ public class RoomSpawn : MonoBehaviour {
 		Destroy (_oldRoom.gameObject);
 
 
-        if (_roomCounter >= LevelData.Rooms.Count)
+        if (_end.Enabled)
         {
-
             StartCoroutine(_end.StartEndGame());
             
         }
