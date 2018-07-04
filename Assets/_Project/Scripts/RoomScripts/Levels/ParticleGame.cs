@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class ParticleGame : ContentScript {
 
@@ -8,7 +9,6 @@ public class ParticleGame : ContentScript {
     public ChangeParticleColor ChangeParticle_Col;
 
     public ParticleSystem PS_ForDoor;
-
 
     private bool _colFinished;
     private bool _leverFinished;
