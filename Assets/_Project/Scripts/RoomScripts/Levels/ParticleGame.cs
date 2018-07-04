@@ -10,8 +10,8 @@ public class ParticleGame : ContentScript {
 
     public ParticleSystem PS_ForDoor;
 
-    private bool _colFinished;
-    private bool _leverFinished;
+    public bool _colFinished;
+    public bool _leverFinished;
     private bool _doorOpened;
 
 	// Use this for initialization
@@ -21,29 +21,31 @@ public class ParticleGame : ContentScript {
         ChangeParticle_Lever.Finished = RegisterFinishedParticleSystem;
 
 	}
-	
 
 
-
-    public void RegisterFinishedParticleSystem(ChangeParticleColor sender)
+    private void Update()
     {
         if (_doorOpened)
             return;
 
-        if (!_colFinished)
+        if(_leverFinished && _colFinished)
         {
-            if (sender == ChangeParticle_Col)
-                _colFinished = true;
-        }
-        if (!_leverFinished)
-        {
-            if (sender == ChangeParticle_Lever)
-                _leverFinished = true;
-        }
-        if (_leverFinished && _colFinished)
-        {
+            _doorOpened = true;
             StartCoroutine(FinishRoom());
         }
+    }
+
+    public void RegisterFinishedParticleSystem(ChangeParticleColor sender, bool active)
+    {
+        if (_doorOpened)
+            return;
+
+        if (sender == ChangeParticle_Col)
+            _colFinished = active;
+
+        if (sender == ChangeParticle_Lever)
+            _leverFinished = active;
+        
     }
 
     public IEnumerator FinishRoom()

@@ -13,7 +13,7 @@ public class ChangeParticleColor : MonoBehaviour
 
     public bool IsActive;
 
-    public Action<ChangeParticleColor> Finished;
+    public Action<ChangeParticleColor,bool> Finished;
 
     public AnimationCurve ColorCurve;
 
@@ -56,8 +56,13 @@ public class ChangeParticleColor : MonoBehaviour
 
         if (1 - value > 0.95f)
         {
-            Finished(this);
+            Finished(this,true);
             IsActive = true;
+        }
+        else
+        {
+            Finished(this, false);
+            IsActive = false;
         }
     }
 
@@ -66,32 +71,38 @@ public class ChangeParticleColor : MonoBehaviour
         if (Type == ChangeType.Lever)
             return;
 
-        // get the particles which matched the trigger conditions this frame
-        int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
-
-        // iterate through the particles which exited the trigger and make them green
-        for (int i = 0; i < numEnter; i++)
+        if(Type == ChangeType.Collider)
         {
-            ParticleSystem.Particle p = enter[i];
-            p.startColor = TargetColor;
-            enter[i] = p;
-        }
+            // get the particles which matched the trigger conditions this frame
+            int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
 
-        // re-assign the modified particles back into the particle system
-        _ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+            if(numEnter > 0)
+            {
+                if (enter[0].GetCurrentColor(_ps) == TargetColor)
+                {
+                    Finished(this, true);
+                }
+                else Finished(this, false);
+            }
 
-        if(numEnter > 0)
-        {
-            IsActive = true;
-            Finished(this);
-        }
+            // iterate through the particles which exited the trigger and make them green
+            for (int i = 0; i < numEnter; i++)
+            {
+                ParticleSystem.Particle p = enter[i];
+                p.startColor = TargetColor;
+                enter[i] = p;
+            }
 
+            // re-assign the modified particles back into the particle system
+            _ps.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+        }     
     }
 
 
     public enum ChangeType
     {
         Collider,
+        Receiver,
         Lever
     }
 

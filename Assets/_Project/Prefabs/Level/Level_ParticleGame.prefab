@@ -464,6 +464,7 @@ GameObject:
   - component: {fileID: 4505745024965000}
   - component: {fileID: 33411281089624938}
   - component: {fileID: 23300458973820032}
+  - component: {fileID: 65449473698439440}
   m_Layer: 0
   m_Name: SchachtelRechts (1)
   m_TagString: Untagged
@@ -989,7 +990,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839522819578724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5152465, y: -4.382301e-17, z: 37.815697}
+  m_LocalPosition: {x: -0.2960779, y: 4.9752904e-18, z: 8.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073960414138006}
@@ -2093,8 +2094,20 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.12}
+  m_Size: {x: 5, y: 1, z: 0.12}
   m_Center: {x: 0, y: 0, z: 0.46}
+--- !u!65 &65449473698439440
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1730521524207450}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -0.03, y: 0.4, z: 0.40000007}
+  m_Center: {x: 0.49, y: 0.00000001490116, z: 0.0555222}
 --- !u!65 &65503976271859580
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2319,6 +2332,8 @@ MonoBehaviour:
   ChangeParticle_Lever: {fileID: 114129028452770284}
   ChangeParticle_Col: {fileID: 114250257087959552}
   PS_ForDoor: {fileID: 198692315836301280}
+  _colFinished: 0
+  _leverFinished: 0
 --- !u!114 &114250257087959552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2330,7 +2345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a050a7f0f55cc4f88f1b63cf353a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
+  Type: 2
   Lever: {fileID: 114851259149811428}
   IsActive: 0
   ColorCurve:
@@ -2493,7 +2508,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1563208848
+  randomSeed: 594678130
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5854,14 +5869,14 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 978982579
+  randomSeed: -1422662686
   InitialModule:
     serializedVersion: 3
     enabled: 1
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.22
+      scalar: 2.37
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6496,7 +6511,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -6507,19 +6522,25 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0
+          value: 1
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
+          tangentMode: 0
+        - serializedVersion: 2
+          time: 0.939079
+          value: 1
+          inSlope: 0
+          outSlope: 0
           tangentMode: 0
         - serializedVersion: 2
           time: 1
-          value: 1
-          inSlope: 1
+          value: 0.08224535
+          inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -8354,7 +8375,7 @@ ParticleSystem:
   TriggerModule:
     enabled: 1
     collisionShape0: {fileID: 4364309224144820}
-    collisionShape1: {fileID: 0}
+    collisionShape1: {fileID: 4505745024965000}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
     collisionShape4: {fileID: 0}
@@ -9215,7 +9236,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1201374269
+  randomSeed: 1666990089
   InitialModule:
     serializedVersion: 3
     enabled: 1
