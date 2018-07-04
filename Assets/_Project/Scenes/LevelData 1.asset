@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dea3808e170a3641b36db773ea8fd84, type: 3}
+  m_Name: LevelData 1
+  m_EditorClassIdentifier: 
+  Rooms:
+  - RoomObj: {fileID: 1602374333291302, guid: 28970508f1e251943962e818a59b9c1e, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1839522819578724, guid: a9bf467f0d7262a43bc1b57997c5f420, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1030096431536964, guid: 55cd0f6f3b67ad042a66dedeb9cc1d0b, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1773052208236292, guid: e4b989b3566a85644befe75d70242b69, type: 2}
+    Width: 6
+  - RoomObj: {fileID: 1602374333291302, guid: 28970508f1e251943962e818a59b9c1e, type: 2}
+    Width: 6

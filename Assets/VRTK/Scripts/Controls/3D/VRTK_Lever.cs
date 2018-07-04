@@ -29,13 +29,14 @@ namespace VRTK
         [Tooltip("The minimum angle of the lever counted from its initial position.")]
         public float minAngle = 0f;
         [Tooltip("The maximum angle of the lever counted from its initial position.")]
-        public float maxAngle = 130f;
+        public float maxAngle = -120f;
         [Tooltip("The increments in which lever values can change.")]
         public float stepSize = 1f;
         [Tooltip("The amount of friction the lever will have whilst swinging when it is not grabbed.")]
         public float releasedFriction = 30f;
         [Tooltip("The amount of friction the lever will have whilst swinging when it is grabbed.")]
         public float grabbedFriction = 60f;
+
 
         protected HingeJoint leverHingeJoint;
         protected bool leverHingeJointCreated = false;
@@ -100,6 +101,7 @@ namespace VRTK
                 controlMax = maxAngle
             };
         }
+       
 
         protected override void HandleUpdate()
         {
@@ -172,7 +174,7 @@ namespace VRTK
             return Mathf.Round((leverHingeJoint.angle) / stepSize) * stepSize;
         }
 
-        protected virtual void SnapToValue(float value)
+        public virtual void SnapToValue(float value)
         {
             float angle = ((value - minAngle) / (maxAngle - minAngle)) * (leverHingeJoint.limits.max - leverHingeJoint.limits.min);
 

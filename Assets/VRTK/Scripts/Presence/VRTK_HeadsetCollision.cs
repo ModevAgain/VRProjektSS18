@@ -167,7 +167,7 @@ namespace VRTK
             headsetRigidbody.isKinematic = true;
             headsetRigidbody.useGravity = false;
 
-            Collider headsetCollider = headset.GetComponentInChildren<Collider>();
+            Collider headsetCollider = null;    //headset.GetComponentInChildren<Collider>();       Removed because of our custom collider
             if (headsetCollider == null)
             {
                 CreateHeadsetColliderContainer();
@@ -239,6 +239,9 @@ namespace VRTK
             {
                 return;
             }
+
+            if (collider.gameObject.layer == LayerMask.NameToLayer("Interactables"))
+                return;
 
             if (enabled && !VRTK_PlayerObject.IsPlayerObject(collider.gameObject) && ValidTarget(collider.transform))
             {

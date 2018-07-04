@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/_Project/Scenes/World_Moritz.unity
+    guid: 55ce21290bfaec144812134b6fd02bbe

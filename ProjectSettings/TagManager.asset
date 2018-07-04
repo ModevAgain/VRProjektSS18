@@ -11,6 +11,12 @@ TagManager:
   - Fader
   - dontmove
   - listlast
+  - ExcludeTeleport
+  - Hands
+  - Goal
+  - TeleportIgnore
+  - Mirror
+  - DontFade
   layers:
   - Default
   - TransparentFX
@@ -30,10 +36,10 @@ TagManager:
   - TeleportPoints
   - DemoUI
   - Toys
-  - 
-  - 
-  - 
-  - 
+  - TriggersForPlayer
+  - Particles
+  - ColliderForParticles
+  - Interactables
   - 
   - 
   - 

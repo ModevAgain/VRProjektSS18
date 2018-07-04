@@ -149,6 +149,7 @@ namespace VRTK
 
         protected override bool DetectSetup()
         {
+
             finalDirection = (direction == ButtonDirection.autodetect ? DetectDirection() : direction);
             if (finalDirection == ButtonDirection.autodetect)
             {
@@ -183,7 +184,6 @@ namespace VRTK
                     DestroyImmediate(buttonJoint);
                     recreate = true;
                 }
-
                 // since limit applies to both directions object needs to be moved halfway to activation before adding joint
                 transform.position = transform.position + ((activationDir.normalized * activationDistance) * 0.5f);
                 buttonJoint = gameObject.AddComponent<ConfigurableJoint>();

@@ -17,6 +17,8 @@ namespace VRTK
     [AddComponentMenu("VRTK/Scripts/Locomotion/Object Control Actions/VRTK_SnapRotateObjectControlAction")]
     public class VRTK_SnapRotateObjectControlAction : VRTK_BaseObjectControlAction
     {
+        public Rotator CustomRotator;
+
         [Tooltip("The angle to rotate for each snap.")]
         public float anglePerSnap = 30f;
         [Tooltip("The snap angle multiplier to be applied when the modifier button is pressed.")]
@@ -39,7 +41,8 @@ namespace VRTK
                 if (angle != 0f)
                 {
                     Blink(blinkTransitionSpeed);
-                    RotateAroundPlayer(controlledGameObject, angle);
+                    //RotateAroundPlayer(controlledGameObject, angle);
+                    CustomRotator.Rotate(angle);
                 }
             }
         }
