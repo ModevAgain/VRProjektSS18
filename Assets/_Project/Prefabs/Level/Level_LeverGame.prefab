@@ -874,7 +874,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437323748841152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.34824, y: -8.02209e-17, z: 69.22411}
+  m_LocalPosition: {x: -2.884456, y: -4.4488695e-17, z: 38.390125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4290480901471384}
@@ -1435,7 +1435,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1613077902334016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
   m_LocalScale: {x: 1.5939301, y: 1.59393, z: 2.5091898}
   m_Children: []
   m_Father: {fileID: 4396708359904288}
@@ -2715,7 +2715,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.03446909
+  activationDistance: 0.034469772
   buttonStrength: 5
   events:
     OnPush:
