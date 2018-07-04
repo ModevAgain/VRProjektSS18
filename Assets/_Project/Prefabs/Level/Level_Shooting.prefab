@@ -600,7 +600,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746137694744124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.713482, y: -4.3570902e-17, z: 37.59815}
+  m_LocalPosition: {x: -2.4479096, y: -9.973195e-17, z: 86.06056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4452092878572874}
@@ -1729,7 +1729,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.12}
+  m_Size: {x: 5, y: 1, z: 0.12}
   m_Center: {x: 0, y: 0, z: 0.46}
 --- !u!82 &82460809100074370
 AudioSource:
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.031118965
+  activationDistance: 0.03111534
   buttonStrength: 5
   events:
     OnPush:
