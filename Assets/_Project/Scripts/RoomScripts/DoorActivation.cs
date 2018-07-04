@@ -8,7 +8,7 @@ public class DoorActivation : MonoBehaviour {
 
     public string AnimationName;
 
-    public Collider BlockingCollider;
+    //public Collider BlockingCollider;
 
     public bool Ready = false;
 
@@ -61,7 +61,7 @@ public class DoorActivation : MonoBehaviour {
 		_isOpen = true;
 
 		_animator.SetTrigger("Open");
-        DisableBlockingCollider();
+        //DisableBlockingCollider();
 
 	}
 
@@ -112,8 +112,8 @@ public class DoorActivation : MonoBehaviour {
 
     }
 
-    public void DisableBlockingCollider()
-    {
-        BlockingCollider.enabled = false;
-    }
+    //public void DisableBlockingCollider()
+    //{
+    //    BlockingCollider.enabled = false;
+    //}
 }
