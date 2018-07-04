@@ -18,7 +18,7 @@ public class Level_02 : ContentScript {
     private bool _windowIsOpen = false;
 
     [HideInInspector]
-    public bool levelFinished = false;
+    public bool _levelFinished = false;
 
     void Start ()
     {
@@ -67,7 +67,7 @@ public class Level_02 : ContentScript {
 
     private void LevelEnd()
     {
-        levelFinished = true;
+        _levelFinished = true;
         StartCoroutine(_window.CloseWindow());
         StartCoroutine(StopTargets());
         _door.OpenDoorFromButton();

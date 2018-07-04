@@ -29,7 +29,7 @@ public class Target : MonoBehaviour {
 	
     private void MoveTarget()
     {
-        if (!_lvlManager.levelFinished)
+        if (!_lvlManager._levelFinished)
         {
             if (_targetCon.MoveY)
                _targetTweener = transform.DOLocalMoveY(Random.Range(_startPos, _maxMoveRange), 3).OnComplete(() => MoveTarget());

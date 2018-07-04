@@ -13,12 +13,14 @@ public class Window : MonoBehaviour {
     public float WindowCounter;
     private float _counter;
     private MeshCollider _collider;
+    private Level_02 _lvlMan;
 
     public delegate void WindowOpened();
     public WindowOpened WindowIsOpen;
 
 	// Use this for initialization
 	void Start () {
+        _lvlMan = GetComponentInParent<Level_02>();
         _collider = GetComponent<MeshCollider>();
         _windowMat = GetComponent<MeshRenderer>().material;
         _windowMat.DOFloat(0, "_Level", 0);
@@ -26,7 +28,7 @@ public class Window : MonoBehaviour {
 	
     public void OnButtonPush()
     {
-        if (!_windowOpended)
+        if (!_windowOpended && !_lvlMan._levelFinished)
         {
             _windowOpended = true;
             StartCoroutine(OpenWindow());
