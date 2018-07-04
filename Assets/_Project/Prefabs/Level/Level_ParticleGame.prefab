@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 64843633170368156}
   m_Layer: 0
   m_Name: DissolveWall
-  m_TagString: Untagged
+  m_TagString: DontFade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -989,7 +989,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839522819578724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.038612, y: -1.1588405e-16, z: 48.142475}
+  m_LocalPosition: {x: -16.355774, y: -7.1719855e-17, z: 61.88841}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073960414138006}
@@ -2319,7 +2319,6 @@ MonoBehaviour:
   ChangeParticle_Lever: {fileID: 114129028452770284}
   ChangeParticle_Col: {fileID: 114250257087959552}
   PS_ForDoor: {fileID: 198692315836301280}
-  CubeForGreening: {fileID: 1630460218225132}
 --- !u!114 &114250257087959552
 MonoBehaviour:
   m_ObjectHideFlags: 1

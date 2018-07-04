@@ -22,8 +22,8 @@ public class EndGame : MonoBehaviour
     public IEnumerator StartEndGame()
     {
 
-        if (!_enabled)
-            yield break;
+        //if (!_enabled)
+        //    yield break;
 
         Vector3 targetPos = Camera.main.transform.position;
 

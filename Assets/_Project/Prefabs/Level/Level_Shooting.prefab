@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64694722939786502}
   m_Layer: 0
   m_Name: _DissolveWall
-  m_TagString: Untagged
+  m_TagString: DontFade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,7 +600,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746137694744124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 14}
+  m_LocalPosition: {x: 9.44393, y: -7.136323e-17, z: 61.580666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4452092878572874}
@@ -1242,7 +1242,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d8a59c8149cd25646aa6c3761acb952f, type: 3}
+  - {fileID: 2100000, guid: b148ac3f33410754fbd0093d5fb1f24a, type: 2}
   - {fileID: 2100002, guid: d8a59c8149cd25646aa6c3761acb952f, type: 3}
   - {fileID: 2100004, guid: d8a59c8149cd25646aa6c3761acb952f, type: 3}
   m_StaticBatchInfo:
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   value: 0
   connectedTo: {fileID: 0}
   direction: 0
-  activationDistance: 0.031118965
+  activationDistance: 0.03111534
   buttonStrength: 5
   events:
     OnPush:

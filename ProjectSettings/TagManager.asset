@@ -16,6 +16,7 @@ TagManager:
   - Goal
   - TeleportIgnore
   - Mirror
+  - DontFade
   layers:
   - Default
   - TransparentFX
