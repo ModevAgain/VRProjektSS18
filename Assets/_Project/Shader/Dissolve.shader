@@ -1,6 +1,7 @@
 ﻿Shader "Custom/DissolveBlock"
 {
     Properties {
+		
       _MainTex ("Texture (RGB)", 2D) = "white" {}
       _SliceGuide ("Slice Guide (RGB)", 2D) = "white" {}
       _SliceAmount ("Slice Amount", Range(0.0, 1.0)) = 0.5
