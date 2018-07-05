@@ -48,11 +48,11 @@ public class ButtonChasers : ContentScript {
         Tween t = null;
 
 
-        if (transform.localPosition.x == initPos.x)
+        if (ButtonT.localPosition.x == initPos.x)
         {
-            t = transform.DOLocalMoveX(-1.9f, 0.2f);
+            t = ButtonT.DOLocalMoveX(-1.9f, 0.2f);
         }
-        else t = transform.DOLocalMoveX(initPos.x, 0.2f);
+        else t = ButtonT.DOLocalMoveX(initPos.x, 0.2f);
 
         t.OnComplete(() =>
         {
@@ -61,7 +61,7 @@ public class ButtonChasers : ContentScript {
         });
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Trigger(Collider other)
     {
         if (other.tag == "Hands")
             Move();
