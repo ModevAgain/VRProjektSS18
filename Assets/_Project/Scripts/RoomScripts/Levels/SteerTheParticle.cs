@@ -23,10 +23,11 @@ public class SteerTheParticle : ContentScript {
 
     public void Finish()
     {
-        StartCoroutine(DissolveReceiver());
+        //StartCoroutine(DissolveReceiver());
         
-        if (!_doorOpened && _dissolved)
+        if (!_doorOpened)
         {
+            ParticleReceiver.SetActive(false);
             _doorOpened = true;
             Door.OpenDoorFromButton();
             ParticleKiller.enabled = true;
