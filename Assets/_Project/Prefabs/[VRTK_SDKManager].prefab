@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 224737427520588730}
   - component: {fileID: 222064318900286574}
   - component: {fileID: 114338720279346842}
+  - component: {fileID: 225706724717917238}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -976,6 +977,7 @@ GameObject:
   - component: {fileID: 114381220007274920}
   - component: {fileID: 114840032934639520}
   - component: {fileID: 114027572880450198}
+  - component: {fileID: 114818365793596004}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -2714,7 +2716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreTriggerColliders: 1
   colliderRadius: 0.1
-  targetListPolicy: {fileID: 114027572880450198}
+  targetListPolicy: {fileID: 114818365793596004}
   headsetColliding: 0
   collidingWith: {fileID: 0}
 --- !u!114 &114121782726646482
@@ -4302,6 +4304,21 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SimController
     descriptionIndex: 0
+--- !u!114 &114818365793596004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1853219321277266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 0
+  checkType: 1
+  identifiers:
+  - DontFade
 --- !u!114 &114821992218802406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5256,3 +5273,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225706724717917238
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1520540828787626}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

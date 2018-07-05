@@ -25,7 +25,7 @@ public class ContentScript : MonoBehaviour {
         //}
     }
 
-    public IEnumerator CloseConnectionToOldRoom()
+    public virtual IEnumerator CloseConnectionToOldRoom()
     {
         _connectionBlockCol.enabled = true;
         yield return new WaitForSeconds(1.5f);

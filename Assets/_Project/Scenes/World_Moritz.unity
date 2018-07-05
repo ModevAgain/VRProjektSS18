@@ -1078,11 +1078,6 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114090736057676116, guid: 5e7c586ee4a05504283fbbc517c092de,
-        type: 2}
-      propertyPath: targetListPolicy
-      value: 
-      objectReference: {fileID: 1608374349}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e7c586ee4a05504283fbbc517c092de, type: 2}
   m_IsPrefabParent: 0
@@ -1271,26 +1266,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba7f82bc5955b0e42a93413ead6f3d1f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1608374342 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1853219321277266, guid: 5e7c586ee4a05504283fbbc517c092de,
-    type: 2}
-  m_PrefabInternal: {fileID: 1072219665}
---- !u!114 &1608374349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608374342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - DontFade
 --- !u!1001 &1631651885
 Prefab:
   m_ObjectHideFlags: 0

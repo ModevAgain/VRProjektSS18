@@ -4,23 +4,41 @@ using UnityEngine;
 using DG.Tweening;
 using VRTK;
 
-public class ButtonChasers : MonoBehaviour {
+public class ButtonChasers : ContentScript {
 
-    private Collider _col;
+    public GameObject Quaffel; 
 
-    private VRTK_Button _btn;
+    public  Collider _col;
+
+    public VRTK_Button _btn;
+
+    public Transform ButtonT;
 
     private Vector3 initPos;
 
 	// Use this for initialization
 	void Start () {
 
-        initPos = transform.localPosition;
+        initPos = ButtonT.localPosition;
 
-        _col = GetComponent<Collider>();
-        _btn = GetComponentInChildren<VRTK_Button>();
+        
+        
+        Quaffel.GetComponent<MeshRenderer>().material.DOFloat(1, "_DissolveIntensity", 0);
+        //Quaffel.GetComponent<Collider>().enabled = false;
+        Quaffel.SetActive(false);
 
-	}
+    }
+
+    public override IEnumerator CloseConnectionToOldRoom()
+    {
+        yield return base.CloseConnectionToOldRoom();
+
+        Quaffel.SetActive(true);
+
+        yield return Quaffel.GetComponent<MeshRenderer>().material.DOFloat(0, "_DissolveIntensity", 1).WaitForCompletion();
+
+        Quaffel.GetComponent<Collider>().enabled = true;
+    }
 
     public void Move()
     {

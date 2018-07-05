@@ -40,7 +40,7 @@ public class ParticleGame : ContentScript {
     private void FastForwardGoal()
     {
         _doorOpened = true;
-        StartCoroutine(FinishRoom());
+        StartCoroutine(FinishRoom(true));
     }
 
     public void RegisterFinishedParticleSystem(ChangeParticleColor sender, bool active)
