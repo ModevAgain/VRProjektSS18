@@ -21,6 +21,8 @@ public class ChangeParticleColor : MonoBehaviour
 
     private ParticleSystem _ps;
 
+    public bool JustColor;
+
     // these lists are used to contain the particles which match
     // the trigger conditions each frame.
     List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
@@ -54,7 +56,7 @@ public class ChangeParticleColor : MonoBehaviour
 
         mm.startColor = _color;
 
-        if (1 - value > 0.95f)
+        if (1 - value > 0.90f)
         {
             Finished(this,true);
             IsActive = true;
@@ -76,7 +78,7 @@ public class ChangeParticleColor : MonoBehaviour
             // get the particles which matched the trigger conditions this frame
             int numEnter = _ps.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
 
-            if(numEnter > 0)
+            if(numEnter > 0 && !JustColor)
             {
                 if (enter[0].GetCurrentColor(_ps) == TargetColor)
                 {

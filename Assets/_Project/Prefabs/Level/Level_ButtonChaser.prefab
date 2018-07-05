@@ -589,7 +589,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1121664621418074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.581751, y: -9.446005e-17, z: 81.511345}
+  m_LocalPosition: {x: 0, y: 0, z: 28.599998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4792761692017598}
@@ -1577,7 +1577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationName: DoorAnim
-  BlockingCollider: {fileID: 64039749135576822}
   Ready: 0
   OpenDoor: 0
 --- !u!114 &114456337209423096

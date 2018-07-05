@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 198076099922705340}
   - component: {fileID: 199737295285099416}
   - component: {fileID: 114250257087959552}
+  - component: {fileID: 114269406880378896}
   m_Layer: 0
   m_Name: MainParticleRight
   m_TagString: Untagged
@@ -614,6 +615,7 @@ GameObject:
   - component: {fileID: 4616582060161498}
   - component: {fileID: 198692315836301280}
   - component: {fileID: 199363004525542158}
+  - component: {fileID: 114847703376808592}
   m_Layer: 0
   m_Name: MainParticleToDoor
   m_TagString: Untagged
@@ -990,7 +992,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839522819578724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2960779, y: 4.9752904e-18, z: 8.23}
+  m_LocalPosition: {x: 0, y: 0, z: 14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4073960414138006}
@@ -1240,7 +1242,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 54a94cb82f09baa44862c273baa7ea6a, type: 3}
+  - {fileID: 2100000, guid: 9d58713f547ec644983a6130f8b36176, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1274,7 +1276,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 54a94cb82f09baa44862c273baa7ea6a, type: 3}
+  - {fileID: 2100000, guid: 9d58713f547ec644983a6130f8b36176, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1376,7 +1378,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b6d91be4967e5c542a48878ad146a7da, type: 3}
+  - {fileID: 2100000, guid: 9d58713f547ec644983a6130f8b36176, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1751,7 +1753,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 54a94cb82f09baa44862c273baa7ea6a, type: 3}
+  - {fileID: 2100000, guid: 9d58713f547ec644983a6130f8b36176, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2286,6 +2288,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   TargetColor: {r: 0.4627451, g: 0.6901961, b: 0.4627451, a: 1}
+  JustColor: 0
 --- !u!114 &114182396936366832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2331,6 +2334,7 @@ MonoBehaviour:
   ConnectionBlock: {fileID: 1753159961824682}
   ChangeParticle_Lever: {fileID: 114129028452770284}
   ChangeParticle_Col: {fileID: 114250257087959552}
+  ChangeParticle_Door: {fileID: 114847703376808592}
   PS_ForDoor: {fileID: 198692315836301280}
   _colFinished: 0
   _leverFinished: 0
@@ -2367,6 +2371,29 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   TargetColor: {r: 0.4627451, g: 0.6901961, b: 0.4627451, a: 1}
+  JustColor: 0
+--- !u!114 &114269406880378896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417152926047850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a050a7f0f55cc4f88f1b63cf353a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Lever: {fileID: 0}
+  IsActive: 0
+  ColorCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TargetColor: {r: 0.4627451, g: 0.6901961, b: 0.4627451, a: 1}
+  JustColor: 1
 --- !u!114 &114381349991439888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2378,6 +2405,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe41986cac6bd94e832bbeaaa80504a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114847703376808592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1969558881532270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3362ad05c95c3408983b099a15e65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsActive: 0
+  TargetColor: {r: 0.4627451, g: 0.6901961, b: 0.4627451, a: 1}
 --- !u!114 &114851259149811428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2433,7 +2473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimationName: DoorAnim
-  BlockingCollider: {fileID: 64843633170368156}
   Ready: 0
   OpenDoor: 0
 --- !u!135 &135680012228764558
@@ -2508,7 +2547,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 594678130
+  randomSeed: -324208404
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -9236,7 +9275,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1666990089
+  randomSeed: 112172617
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11734,8 +11773,8 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
-    collisionShape0: {fileID: 0}
+    enabled: 1
+    collisionShape0: {fileID: 4364309224144820}
     collisionShape1: {fileID: 0}
     collisionShape2: {fileID: 0}
     collisionShape3: {fileID: 0}
